@@ -11,6 +11,7 @@
 - We have included subnational data for Chinese provincial-level jurisdictions in our main data product
 -->
 - we have stopped updating the `OxCGRT_latest_withnotes.csv` file because of GitHub's 100mb file size limit. Instead, we are now publishing `OxCGRT_withnotes_2020.csv` and `OxCGRT_withnotes_2021.csv` as separate files. The `latest_withnotes` file only contains data up until early-September 2021. We will keep it active for a few months, as some people rely on it for scripts, but it will eventually be depricated and removed as it no longer contains our "latest" data.
+- We have stopped updating data on our E3, E4, and H4 fiscal indicators. The data for these indicators will still be present in the CSV files, but they just are not being actively updated beyond August 2021. We do still plan to actively keep the H5 fiscal indicators (government investment in vaccine research) updated over time.
 - We have a mailing list to provide technical users with slightly more detailed release notes, and advance warning of changes to database structure. You can register for these email updates here: http://eepurl.com/hiMsdL
 
 ---
