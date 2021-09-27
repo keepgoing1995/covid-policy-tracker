@@ -1,6 +1,6 @@
 # Methodology for calculating indices
 
-***Index methodology version 3.6 <br/>5 May 2021***
+***Index methodology version 3.7 <br/>27 September 2021***
 
 The Oxford Covid-19 Government Response Tracker ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)) tracks individual policy measures across 20 indicators. We also calculate several indices to give an overall impression of government activity, and this page describes how these indices are calculated. Changes to this methodology are recorded in the [changelog](#index-methodology-changelog) below.
 
@@ -22,7 +22,7 @@ Two versions of each indicator are present in the database. A regular version wh
 
 ## Calculating sub-index scores for each indicator
 
-All of the indices use ordinal indicators where policies a ranked on a simple numerical scale. The project also records five non-ordinal indicators – E3, E4, H4, H5 and M1 – but these are not used in our index calculations.
+All of the indices use ordinal indicators where policies a ranked on a simple numerical scale. The project also records five non-ordinal indicators – E3, E4, H4, H5 and M1 – but these are not used in our index calculations. As of August 2021, E3, E4, and H4 will no longer be updated. The data remains present in the CSV files.
 
 Some indicators – C1-C7, E1, H1, H6 and H7 – have an additional binary flag variable that can be either 0 or 1. For C1-C7, H1 and H6 this corresponds to the geographic scope of the policy. For E1, this flag variable corresponds to the sectoral scope of income support. For H7, this flag variable corresponds to whether the individual or government is funding the vaccination.
 
@@ -132,6 +132,7 @@ The individual sub-index scores for the legacy index are calculated through a sl
 
 ## Index methodology changelog
 
+- 27 September 2021: note to state no longer updating E3, E4 and H4
 - 5 May 2021: replaced '19 indicators' with '20 indicators'
 - 15 March 2021: added H8 Protection of elderly people 
 - 14 January 2021: replaced 'country' with 'country/territory'
