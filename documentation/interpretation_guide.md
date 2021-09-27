@@ -107,7 +107,7 @@ If there are restrictions for the circulation of private cars based on certain c
 
 ### E3- Fiscal Measures
 
-- **We have stopped updating data for E3. The data for this indicators will still be present in the CSV files, but they is not being actively updated beyond August 2021.
+- **We have stopped updating data for E3. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - If the specific monetary value is undisclosed or unclear, we make a note recording the announcement, but don’t record the monetary value. 
 Sometimes governments make ambiguous funding announcements (where it is not clear what the money is for), or they announce multiple programmes under a single number (eg, fiscal stimulus, plus hospital funding, plus vaccine investment, plus support for other countries, in one number). In these cases, the spending is recorded in this E3 category, and not in the other monetary categories (E4, H4, and H5).
 - If the state is providing support to specific groups, for example funding children’s school meals, handing out staple goods, or providing grants to single parents, this is recorded under E3.
@@ -116,7 +116,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 
 ### E4- Providing Support to other countries
 
- **We have stopped updating data for E3. The data for this indicators will still be present in the CSV files, but they is not being actively updated beyond August 2021.
+- **We have stopped updating data for E4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - We only record money here that a country/territory/subnational unit DONATES to another country/territory/subnational unit, not that is received. We do not record in-kind support, for example donations of medical equipment, as a monetary equivalent; but we would still record a note of the in-kind support.
 - We record donations to international organisations, such as  WHO, WFP, as long as the country being recorded is the donor and it is to a specific relief fund specifically related to COVID. Donations to a generic WHO fund which might not be used specifically for COVID related issues is not specific enough to record.
 
@@ -170,7 +170,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
     - We will sometimes downgrade a country/territory from a 2 to a 1 if there is evidence that their contact tracing resources have been overwhelmed. In this cases the official policy of the country/territory is often still to say that they conduct ‘comprehensive’ contact tracing. But if there are very high daily case numbers, and credible reports of newly-diagnosed cases whose recent contacts were not traced, we will not report this as a 2.
 
 ### H4 - Emergency investment in healthcare
- **We have stopped updating data for E3. The data for this indicators will still be present in the CSV files, but they is not being actively updated beyond August 2021.
+- **We have stopped updating data for H4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - If specific numbers of spending announced are available, but not a specific date on which this policy was brought into effect, we record the numbers and the exchange rate when mentioned, and explain in the note that this may not have been the exact day that spending began.    
 
 ### H5 - Investment in vaccines
