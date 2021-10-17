@@ -1,34 +1,48 @@
 name: An R workflow to automate daily updates of main repo graphs and timeseries csv
 on:
-        schedule:
-                - cron: '*/60 0-1 * * *'
+  schedule:
+    - cron: '45 7 * * *'
 
-jobs: 
-        build:
-                name: R github actions script for covid-tracker
-                runs-on: ubuntu-latest
-                steps: 
-                        - uses: actions/checkout@master
-                        - uses: r-lib/actions/setup-r@master
-                          with: 
-                                  r-version: '3.5.3' # The R version to be installed 
-                        - name: Install package dependencies        
-                          run: |
-                             source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/sysrequirements.sh)
-                        - name: Run data update codes
-                          run: | 
-                            echo 'Starting data prep code'
-                            Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/githubroutine.r")'
-                        - name: Commit changes
-                          run: |
-                            ls
-                            echo 'Committing output'
-                            git config --local user.email "action@github.com"
-                            git config --local user.name "GitHub Action"
-                            git add .
-                            git diff-index --quiet HEAD || git commit -m "OxCGRT Graphs and timeseries Update" -a
-                            git push origin master:master                        
-#                        - name: Push changes
-#                          uses: ad-m/github-push-action@master
-#                          with:
-#                            github_token: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  build:
+    name: R github actions script for covid-tracker
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@main
+        with:
+          path: master
+
+      - uses: r-lib/actions/setup-r@master
+
+      - name: Cache R packages
+        uses: actions/cache@main
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
+          restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
+
+      - name: Install dependencies
+        run: |
+          ls
+          cd master
+          ls
+          source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/sysrequirements.sh)
+
+      - name: Run automated script for graphs and timeseries
+        run: |
+          ls
+          cd master
+          ls
+          Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/githubroutine.r")'
+
+      - name: Commit changes
+        run: |
+          ls
+          cd master
+          ls
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff-index --quiet HEAD || git commit -m "OxCGRT Graphs and timeseries Update" -a
+          git push origin master:master
