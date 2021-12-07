@@ -1,5 +1,5 @@
 # OxCGRT Coding Interpretation Guide
-***Version 1.10 <br/>Date: 8 July 2021***
+***Version 1.11 <br/>Date: 27 September 2021***
 
 This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such.
 
@@ -107,6 +107,7 @@ If there are restrictions for the circulation of private cars based on certain c
 
 ### E3- Fiscal Measures
 
+- **We have stopped updating data for E3. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - If the specific monetary value is undisclosed or unclear, we make a note recording the announcement, but don’t record the monetary value. 
 Sometimes governments make ambiguous funding announcements (where it is not clear what the money is for), or they announce multiple programmes under a single number (eg, fiscal stimulus, plus hospital funding, plus vaccine investment, plus support for other countries, in one number). In these cases, the spending is recorded in this E3 category, and not in the other monetary categories (E4, H4, and H5).
 - If the state is providing support to specific groups, for example funding children’s school meals, handing out staple goods, or providing grants to single parents, this is recorded under E3.
@@ -115,6 +116,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 
 ### E4- Providing Support to other countries
 
+- **We have stopped updating data for E4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - We only record money here that a country/territory/subnational unit DONATES to another country/territory/subnational unit, not that is received. We do not record in-kind support, for example donations of medical equipment, as a monetary equivalent; but we would still record a note of the in-kind support.
 - We record donations to international organisations, such as  WHO, WFP, as long as the country being recorded is the donor and it is to a specific relief fund specifically related to COVID. Donations to a generic WHO fund which might not be used specifically for COVID related issues is not specific enough to record.
 
@@ -166,13 +168,14 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 - *Some examples that could indicate a 2*:
     - Declaring increased resources to contact tracing capacity and the intention to do contact tracing for all identified cases, PLUS evidence that this is actually happening on the ground and there is capacity to do so.
     - We will sometimes downgrade a country/territory from a 2 to a 1 if there is evidence that their contact tracing resources have been overwhelmed. In this cases the official policy of the country/territory is often still to say that they conduct ‘comprehensive’ contact tracing. But if there are very high daily case numbers, and credible reports of newly-diagnosed cases whose recent contacts were not traced, we will not report this as a 2.
-    
- ### H5 - Investment in vaccines
+
+### H4 - Emergency investment in healthcare
+- **We have stopped updating data for H4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
+- If specific numbers of spending announced are available, but not a specific date on which this policy was brought into effect, we record the numbers and the exchange rate when mentioned, and explain in the note that this may not have been the exact day that spending began.    
+
+### H5 - Investment in vaccines
 - This indicator record spending on vaccines procurement as well as vaccine development spending- therefore covering all vaccine related spending
     
- ### H4 - Emergency investment in healthcare
- - If specific numbers of spending announced are available, but not a specific date on which this policy was brought into effect, we record the numbers and the exchange rate when mentioned, and explain in the note that this may not have been the exact day that spending began.
-
  ### H6 - Facial coverings
  - The difference between the 3 and the 4 levels here is that at 4, a mask is required at all times when leaving the house with no exception. Even if people are in a street and more than the recommended social distance from other people, a mask is still required. 
 - *Some examples that could indicate a 2*
@@ -281,6 +284,7 @@ There are a few general rules our coders follow while collecting data:
  - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
 
  ## Interpretation guide changelog
+- 27 September 2021: V1.11 noted that E3, E4, and H4 are no longer being updated
 - 8 July 2021: V1.10 added guidance for vaccination/exemptions coding, added Vaccination policy interpretation guidance, edits to C1 for school holidays
 - 14 June 2021: V1.9 replaced 'federal government' with 'national government' in C8 detail about subnational data, and added guidance on LFT to H2
 - 24 May 2021: V1.8 added in new guidance for non-COVID policies to General
