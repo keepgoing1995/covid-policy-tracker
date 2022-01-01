@@ -1,7 +1,7 @@
 CountryName,CountryCode,RegionName,RegionCode,Jurisdiction,Date,C1_School closing,C1_Flag,C1_Notes,C2_Workplace closing,C2_Flag,C2_Notes,C3_Cancel public events,C3_Flag,C3_Notes,C4_Restrictions on gatherings,C4_Flag,C4_Notes,C5_Close public transport,C5_Flag,C5_Notes,C6_Stay at home requirements,C6_Flag,C6_Notes,C7_Restrictions on internal movement,C7_Flag,C7_Notes,C8_International travel controls,C8_Notes,E1_Income support,E1_Flag,E1_Notes,E2_Debt/contract relief,E2_Notes,E3_Fiscal measures,E3_Notes,E4_International support,E4_Notes,H1_Public information campaigns,H1_Flag,H1_Notes,H2_Testing policy,H2_Notes,H3_Contact tracing,H3_Notes,H4_Emergency investment in healthcare,H4_Notes,H5_Investment in vaccines,H5_Notes,H6_Facial Coverings,H6_Flag,H6_Notes,H7_Vaccination policy,H7_Flag,H7_Notes,H8_Protection of elderly people,H8_Flag,H8_Notes,M1_Wildcard,M1_Notes,V1_Vaccine Prioritisation (summary),V1_Notes,V2A_Vaccine Availability (summary),V2_Notes,V2B_Vaccine age eligibility/availability age floor (general population summary),V2C_Vaccine age eligibility/availability age floor (at risk summary),V2D_Medically/ clinically vulnerable (Non-elderly),V2E_Education,V2F_Frontline workers  (non healthcare),V2G_Frontline workers  (healthcare),V3_Vaccine Financial Support (summary),V3_Notes,ConfirmedCases,ConfirmedDeaths,StringencyIndex,StringencyIndexForDisplay,StringencyLegacyIndex,StringencyLegacyIndexForDisplay,GovernmentResponseIndex,GovernmentResponseIndexForDisplay,ContainmentHealthIndex,ContainmentHealthIndexForDisplay,EconomicSupportIndex,EconomicSupportIndexForDisplay
 Aruba,ABW,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,41.67,,50.00,,42.71,,47.02,,12.50
 Afghanistan,AFG,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,27.78,,33.33,,21.56,,24.64,,0.00
-Angola,AGO,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,66.67,,69.05,,59.90,,68.45,,0.00
+Angola,AGO,,,NAT_TOTAL,20220101,0,,,2,1,,2,1,,4,1,,1,1,,1,1,,2,0,,3,,0,,,0,,,,,,2,1,,3,,1,,,,0,,3,1,,5,1,,1,1,,,,,,,,,,,,,,,,,,66.67,66.67,69.05,69.05,59.90,59.90,68.45,68.45,0.00,0.00
 Albania,ALB,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45.37,,57.86,,52.08,,52.38,,50.00
 Andorra,AND,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,59.26,,72.62,,71.35,,67.26,,100.00
 United Arab Emirates,ARE,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51.85,,69.76,,53.12,,60.71,,0.00
@@ -122,7 +122,7 @@ Dominican Republic,DOM,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Algeria,DZA,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,50.00,,48.81,,51.35,,51.55,,50.00
 Ecuador,ECU,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,57.87,,65.00,,69.53,,68.75,,75.00
 Egypt,EGY,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43.52,,46.43,,46.46,,42.38,,75.00
-Eritrea,ERI,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,62.04,,77.38,,50.00,,57.14,,0.00
+Eritrea,ERI,,,NAT_TOTAL,20220101,1,1,,1,1,,2,1,,3,1,,1,1,,2,1,,0,,,2,,0,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,45.37,45.37,55.95,55.95,,50.00,,57.14,0.00,0.00
 Spain,ESP,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43.98,,48.81,,58.07,,53.87,,87.50
 Estonia,EST,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,42.59,,42.86,,45.83,,52.38,,0.00
 Ethiopia,ETH,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,43.52,,56.67,,46.87,,53.57,,0.00
@@ -146,7 +146,7 @@ Guatemala,GTM,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Guam,GUM,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,34.26,,39.29,,44.79,,51.19,,0.00
 Guyana,GUY,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,54.63,,60.71,,62.50,,64.29,,50.00
 Hong Kong,HKG,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,66.19,,67.19,,66.07,,75.00
-Honduras,HND,,,NAT_TOTAL,20220101,2,0,,2,1,,2,1,,0,,,0,,,1,1,,2,1,,1,,1,0,,2,,,,,,2,1,,3,,1,,,,0,,3,1,,4,1,,2,1,,,,2,,,,,,,,,,,,,,52.78,52.78,64.29,64.29,60.73,60.73,60.48,60.48,62.50,62.50
+Honduras,HND,,,NAT_TOTAL,20220101,2,0,,2,1,,2,1,,0,,,0,,,1,1,,2,1,,1,,1,0,,2,,,,,,2,1,,3,,1,,,,0,,3,1,,4,1,,2,1,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,,,52.78,52.78,64.29,64.29,60.73,60.73,60.48,60.48,62.50,62.50
 Croatia,HRV,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,40.74,,50.71,,46.88,,44.64,,62.50
 Haiti,HTI,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,64.81,,70.24,,63.02,,68.45,,25.00
 Hungary,HUN,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,25.00,,32.86,,41.15,,39.88,,50.00
