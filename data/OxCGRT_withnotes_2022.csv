@@ -629,16 +629,16 @@ Canada,CAN,Northwest Territories,CAN_NT,STATE_TOTAL,20220107,,,,,,,,,,,,,,,,,,,,
 Canada,CAN,Northwest Territories,CAN_NT,STATE_TOTAL,20220108,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Canada,CAN,Northwest Territories,CAN_NT,STATE_TOTAL,20220109,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Canada,CAN,Northwest Territories,CAN_NT,STATE_TOTAL,20220110,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,803,4,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220102,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,875,4,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220103,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,891,4,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220104,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,900,4,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220105,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,921,4,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220106,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,942,4,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220107,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220108,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220109,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220110,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,803,4,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220102,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,875,4,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220103,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,891,4,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220104,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,900,4,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220105,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,921,4,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220106,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,942,4,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220107,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220108,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220109,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Canada,CAN,Nunavut,CAN_NU,STATE_TOTAL,20220110,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Canada,CAN,Ontario,CAN_ON,STATE_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,774806,10206,,,,,,,,,,
 Canada,CAN,Ontario,CAN_ON,STATE_TOTAL,20220102,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,791520,10223,,,,,,,,,,
 Canada,CAN,Ontario,CAN_ON,STATE_TOTAL,20220103,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,805098,10229,,,,,,,,,,
@@ -1749,16 +1749,16 @@ Sri Lanka,LKA,,,NAT_TOTAL,20220107,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 Sri Lanka,LKA,,,NAT_TOTAL,20220108,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51.85,,52.38,,60.94,,62.50,,50.00
 Sri Lanka,LKA,,,NAT_TOTAL,20220109,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51.85,,52.38,,60.94,,62.50,,50.00
 Sri Lanka,LKA,,,NAT_TOTAL,20220110,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,51.85,,52.38,,60.94,,62.50,,50.00
-Lesotho,LSO,,,NAT_TOTAL,20220101,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29652,671,,,,,,,,,,
-Lesotho,LSO,,,NAT_TOTAL,20220102,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29756,671,,,,,,,,,,
-Lesotho,LSO,,,NAT_TOTAL,20220103,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,,,,,,,,,
-Lesotho,LSO,,,NAT_TOTAL,20220104,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,52.78,,64.29,,52.08,,59.52,,0.00
-Lesotho,LSO,,,NAT_TOTAL,20220105,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,52.78,,64.29,,52.08,,59.52,,0.00
-Lesotho,LSO,,,NAT_TOTAL,20220106,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,52.78,,64.29,,52.08,,59.52,,0.00
-Lesotho,LSO,,,NAT_TOTAL,20220107,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
-Lesotho,LSO,,,NAT_TOTAL,20220108,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
-Lesotho,LSO,,,NAT_TOTAL,20220109,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
-Lesotho,LSO,,,NAT_TOTAL,20220110,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220101,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29652,671,,,,,,,,,,
+Lesotho,LSO,,,NAT_TOTAL,20220102,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29756,671,,,,,,,,,,
+Lesotho,LSO,,,NAT_TOTAL,20220103,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,,,,,,,,,
+Lesotho,LSO,,,NAT_TOTAL,20220104,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220105,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220106,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,29999,673,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220107,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220108,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220109,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
+Lesotho,LSO,,,NAT_TOTAL,20220110,,,,,,,2,1,,2,1,,,,,2,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,52.78,,64.29,,52.08,,59.52,,0.00
 Lithuania,LTU,,,NAT_TOTAL,20220101,2,1,,1,1,,2,1,,4,1,,0,,,0,,,0,,,2,,2,1,,0,,,,,,2,1,,3,,2,,,,0,,2,1,,5,1,,0,,,,,2,,0,,,,,,,,0,,521692,7403,50.00,50.00,53.57,53.57,56.25,56.25,57.14,57.14,50.00,50.00
 Lithuania,LTU,,,NAT_TOTAL,20220102,2,1,,1,1,,2,1,,4,1,,0,,,0,,,0,,,2,,2,1,,0,,,,,,2,1,,3,,2,,,,0,,2,1,,5,1,,0,,,,,2,,0,,,,,,,,0,,522884,7420,50.00,50.00,53.57,53.57,56.25,56.25,57.14,57.14,50.00,50.00
 Lithuania,LTU,,,NAT_TOTAL,20220103,2,1,,1,1,,2,1,,4,1,,0,,,0,,,0,,,2,,2,1,,0,,,,,,2,1,,3,,2,,,,0,,2,1,,5,1,,0,,,,,2,,0,,,,,,,,0,,524128,7439,50.00,50.00,53.57,53.57,56.25,56.25,57.14,57.14,50.00,50.00
@@ -2029,15 +2029,15 @@ Oman,OMN,,,NAT_TOTAL,20220107,1,1,,1,1,,2,1,,4,1,,1,1,,1,1,,1,1,,1,,0,,,0,,,,,,2
 Oman,OMN,,,NAT_TOTAL,20220108,1,1,,1,1,,2,1,,4,1,,1,1,,1,1,,1,1,,1,,0,,,0,,,,,,2,1,,3,,2,,,,0,,1,1,,5,1,,0,,,,,2,,3,,5-15 yrs,5-15 yrs,0,0,0,0,5,,,,58.33,58.33,65.48,65.48,53.12,53.12,60.71,60.71,0.00,0.00
 Oman,OMN,,,NAT_TOTAL,20220109,2,0,"Effective 09 Jan 2022: Indian School Muscat (ISM) has suspended physical classroom instructions for Grades 9 to 12 starting Sunday until further notice. With this announcement, ISM is now conducting all classes online. ISM is a community school, based on management comment in the news ""Each school’s Management Committee can decide on running either online or physical classes depending on the number of students and infrastructure they have in place"".  https://archive.vn/QHJyS",1,1,,2,1,,4,1,,1,1,,1,1,,1,1,,1,,0,,,0,,,,,,2,1,,3,,2,,,,0,,1,1,,5,1,,0,,,,,2,,3,,5-15 yrs,5-15 yrs,0,0,0,0,5,,,,60.19,60.19,65.48,65.48,54.17,54.17,61.90,61.90,0.00,0.00
 Oman,OMN,,,NAT_TOTAL,20220110,2,0,,1,1,,2,1,,4,1,,1,1,,1,1,,1,1,,1,,0,,,0,,,,,,2,1,,3,,2,,,,0,,1,1,,5,1,,0,,,,,2,,3,,5-15 yrs,5-15 yrs,0,0,0,0,5,,,,60.19,60.19,65.48,65.48,54.17,54.17,61.90,61.90,0.00,0.00
-Pakistan,PAK,,,NAT_TOTAL,20220101,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1296527,28941,30.09,30.09,37.86,37.86,,,,,,
-Pakistan,PAK,,,NAT_TOTAL,20220102,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1297235,28943,30.09,30.09,37.86,37.86,,,,,,
-Pakistan,PAK,,,NAT_TOTAL,20220103,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1297865,28945,30.09,30.09,37.86,37.86,,,,,,
-Pakistan,PAK,,,NAT_TOTAL,20220104,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1298763,28950,30.09,30.09,37.86,37.86,,48.18,,47.92,,50.00
-Pakistan,PAK,,,NAT_TOTAL,20220105,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,"As of January,05,2022, the Pakistani government has modified its international travel rules. Categorical classification of countries is no longer valid, effectively lifting travel bans from category C locations, including several African and European countries, and Hong Kong among others. Revised rules mandate inbound passengers to hold proof of completing vaccination if above 18 years old and negative results of a PCR test obtained within 48 hours before departure if older than six years. They must continue to submit a health declaration from online or via the Pass Track mobile application within 48 hours before arrival. Returning Pakistani citizens unable to avail of vaccination due to visa or medical issues, as well as Afghan citizens entering via land borders, are exempt from carrying vaccination certificate. Passengers arriving via direct flights from Europe will undergo an on arrival rapid antigen test (RAT); officials will also administer RAT to 50% of arrivals from Qatar, Saudi Arabia, the UAE, as well as a random selection of passengers from other countries. Passengers with positive RAT test results must quarantine for 10 days at a government or self-paid facility, those who test positive on the mandatory PCR test on the eighth day must undergo additional quarantine until they return negative result in a PCR test. Source: Garda World  Archived link: https://web.archive.org/web/20220109175054/https://www.garda.com/crisis24/news-alerts/562991/pakistan-authorities-lift-travel-bans-modify-entry-testing-restrictions-as-of-jan-5-update-64  ",,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1299848,28955,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
-Pakistan,PAK,,,NAT_TOTAL,20220106,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1301141,28961,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
-Pakistan,PAK,,,NAT_TOTAL,20220107,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
-Pakistan,PAK,,,NAT_TOTAL,20220108,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
-Pakistan,PAK,,,NAT_TOTAL,20220109,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
+Pakistan,PAK,,,NAT_TOTAL,20220101,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,1296527,28941,30.09,30.09,37.86,37.86,,,,,,
+Pakistan,PAK,,,NAT_TOTAL,20220102,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,1297235,28943,30.09,30.09,37.86,37.86,,,,,,
+Pakistan,PAK,,,NAT_TOTAL,20220103,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,1297865,28945,30.09,30.09,37.86,37.86,,,,,,
+Pakistan,PAK,,,NAT_TOTAL,20220104,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,3,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,1298763,28950,30.09,30.09,37.86,37.86,,48.18,,47.92,,50.00
+Pakistan,PAK,,,NAT_TOTAL,20220105,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,"As of January,05,2022, the Pakistani government has modified its international travel rules. Categorical classification of countries is no longer valid, effectively lifting travel bans from category C locations, including several African and European countries, and Hong Kong among others. Revised rules mandate inbound passengers to hold proof of completing vaccination if above 18 years old and negative results of a PCR test obtained within 48 hours before departure if older than six years. They must continue to submit a health declaration from online or via the Pass Track mobile application within 48 hours before arrival. Returning Pakistani citizens unable to avail of vaccination due to visa or medical issues, as well as Afghan citizens entering via land borders, are exempt from carrying vaccination certificate. Passengers arriving via direct flights from Europe will undergo an on arrival rapid antigen test (RAT); officials will also administer RAT to 50% of arrivals from Qatar, Saudi Arabia, the UAE, as well as a random selection of passengers from other countries. Passengers with positive RAT test results must quarantine for 10 days at a government or self-paid facility, those who test positive on the mandatory PCR test on the eighth day must undergo additional quarantine until they return negative result in a PCR test. Source: Garda World  Archived link: https://web.archive.org/web/20220109175054/https://www.garda.com/crisis24/news-alerts/562991/pakistan-authorities-lift-travel-bans-modify-entry-testing-restrictions-as-of-jan-5-update-64  ",,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,1299848,28955,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
+Pakistan,PAK,,,NAT_TOTAL,20220106,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,1301141,28961,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
+Pakistan,PAK,,,NAT_TOTAL,20220107,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,,,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
+Pakistan,PAK,,,NAT_TOTAL,20220108,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,,,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
+Pakistan,PAK,,,NAT_TOTAL,20220109,0,,,1,0,,1,0,,2,0,,0,,,1,0,,0,,,1,,,,,,,,,,,2,1,,3,,1,,,,,,,,,5,1,,,,,,,2,,3,,5-15 yrs,5-15 yrs,1,0,0,1,5,,,,24.54,24.54,30.71,30.71,,48.18,,47.92,,50.00
 Pakistan,PAK,,,NAT_TOTAL,20220110,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,24.54,,30.71,,48.18,,47.92,,50.00
 Panama,PAN,,,NAT_TOTAL,20220101,2,1,,2,1,,1,1,,4,1,,1,1,,1,1,,0,,,2,,1,1,,0,,,,,,2,1,,3,,2,,,,,,,,,5,1,,0,,,,,2,,3,,5-15 yrs,5-15 yrs,0,0,0,0,5,,497808,7430,57.41,57.41,73.81,73.81,54.17,54.17,58.33,58.33,25.00,25.00
 Panama,PAN,,,NAT_TOTAL,20220102,2,1,,2,1,,1,1,,4,1,,1,1,,1,1,,0,,,2,,1,1,,0,,,,,,2,1,,3,,2,,,,,,,,,5,1,,0,,,,,2,,3,,5-15 yrs,5-15 yrs,0,0,0,0,5,,498785,7433,57.41,57.41,73.81,73.81,54.17,54.17,58.33,58.33,25.00,25.00
