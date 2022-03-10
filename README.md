@@ -37,7 +37,7 @@ Our data is made available free to use for any purpose under a Creative Commons 
 
 ## The database
 
-OxCGRT collects publicly available information on 23 indicators of government response. This information is collected by a team of over 200 volunteers from the Oxford community and is updated continuously.
+OxCGRT collects publicly available information on 21 indicators of government response. This information is collected by a team of over 200 volunteers from the Oxford community and is updated continuously.
 
 We also include statistics on the number of reported Covid-19 cases and deaths in each country. These are taken from the [JHU CSSE data repository](https://github.com/CSSEGISandData/COVID-19) for all countries and the US States. 
 
