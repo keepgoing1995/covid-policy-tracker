@@ -1,5 +1,5 @@
 # OxCGRT Coding Interpretation Guide
-***Version 1.11 <br/>Date: 27 September 2021***
+***Version 1.12 <br/>Date: 11 March 2022***
 
 This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such.
 
@@ -168,6 +168,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 - *Some examples that could indicate a 2*:
     - Declaring increased resources to contact tracing capacity and the intention to do contact tracing for all identified cases, PLUS evidence that this is actually happening on the ground and there is capacity to do so.
     - We will sometimes downgrade a country/territory from a 2 to a 1 if there is evidence that their contact tracing resources have been overwhelmed. In this cases the official policy of the country/territory is often still to say that they conduct ‘comprehensive’ contact tracing. But if there are very high daily case numbers, and credible reports of newly-diagnosed cases whose recent contacts were not traced, we will not report this as a 2.
+- When a contact tracing effort transitions from tracing all reported positive cases of individuals to focusing on congregate events or locations where there are multiple positive cases reported, this would be considered a contact tracing effort at the 'limited' or 1 level. 
 
 ### H4 - Emergency investment in healthcare
 - **We have stopped updating data for H4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
@@ -227,6 +228,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 ### V1- Vaccine prioritisation
 
 - We code this from when the official priority groups plan is published, not from when potential categories are discussed informally.
+- When there is no longer prioritisation between groups, and the policy is to vaccinate all adults, this is reported as universal
 
 ### V2- Vaccine eligibility/availability 
 
@@ -238,6 +240,13 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 
 - If people receive the vaccine from their private healthcare insurance-run organisations (e.g. Israel’s HMO members) we code this depending on whether the government is still fully funding the vaccine, or requires copayment from the insurer (therefore not fully government funded). 
 - If full government funding is available for a certain group, we code this as the default. We only code other options if they are the only ones available to individuals of that group.
+
+### V4- Mandatory vaccination
+
+- V4 records a policy requirement to be vaccinated against COVID-19 in order to work in a specific occupation, or for a specific group to be vaccinated. This is a mandatory vaccination as part of occupation or citizenship, and here we do not record voluntary vaccination in order to access services or facilities.
+- We record the date this policy comes into effect, not that it was announced. This may be the date on which people are required to have a first or second dose by.
+- We do not code enforcement, only the presence of the policy.
+- If vaccination is mandatory in a subnational region as a result of an official national or local government policy, we record this in V4. We select V4 when there is evidence from anywhere within a country/region/territory that this group is subject to mandatory vaccination rules. If this is happening in a subnational region, but not nationally, we still record it here.
 
 ### V1 and V2- Category specific guidance 
 
@@ -265,10 +274,10 @@ Here we record where categories have been substituted when category not listed i
 | `Frontline workers (when not otherwise specified)`  | Other people aged 65-69 and key workers essential to the vaccine programme’ (IRL)  <br/> Workers identified as performing a critical function in society [unspecified] (DNK) <br/> Operators essential essential for the country's economic activities (FRA) <br/> Essential professions In this phase, people with essential social and/or economic profession are vaccinated (BEL) 
 | `Tertiary education students`   | University, college, or technical trade schools 
 | `Educators`  | University, college, or technical trade schools  <br/> Teachers in any level of school <br/> Instructors/professors in colleges and universities
-| `Other high contact professions`   | Disability care staff (AUS)
+| `Other high contact professions`   | Disability care staff (AUS), Olympic/professional/international athletes (BRB)
 | `Ethnic minorities`  | Aboriginal and Torres Strait Islander people > 55 (AUS) <br/> Indigenous populations (CAN)
 | `Factory staff`   | Meat processing staff (AUS)
-| `Crowded/communal living conditions (dormitories for migrant workers, temporary accommodations)`  | People in communal facilities with an increased risk of infection and outbreaks (with residents of mixed ages)  <br/> Migrant dormitories/crowded accommodation (SGP) <br/> People living or working in crowded settings (IRL)  <br/> Prison populations (ISR)  <br/> People who live in socially vulnerable situations, such as the homeless or the undocumented. (SWE) <br/>Homeless (KOR)  <br/> Vulnerable and precarious people (homeless…), living in communities (prisons, psychiatric establishments, homes) (FRA)  <br/> People in communal facilities with an increased risk of infection and outbreaks (with residents of mixed ages) (CHE) 
+| `Crowded/communal living conditions (dormitories for migrant workers, temporary accommodations)`  | People in communal facilities with an increased risk of infection and outbreaks (with residents of mixed ages)  (SGP) <br/> People living or working in crowded settings (IRL)  <br/> Prison populations (ISR)  <br/> People who live in socially vulnerable situations, such as the homeless or the undocumented. (SWE) <br/>Homeless (KOR)  <br/> Vulnerable and precarious people (homeless…), living in communities (prisons, psychiatric establishments, homes) (FRA)  <br/> People in communal facilities with an increased risk of infection and outbreaks (with residents of mixed ages) (CHE) 
 
 ## General Interpretation Guidance 
  
@@ -284,6 +293,7 @@ There are a few general rules our coders follow while collecting data:
  - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
 
  ## Interpretation guide changelog
+- 11 March 2022: V1.12 added V4- Mandatory Vaccination, and detail to H3, V1, and 'Best fit' table
 - 27 September 2021: V1.11 noted that E3, E4, and H4 are no longer being updated
 - 8 July 2021: V1.10 added guidance for vaccination/exemptions coding, added Vaccination policy interpretation guidance, edits to C1 for school holidays
 - 14 June 2021: V1.9 replaced 'federal government' with 'national government' in C8 detail about subnational data, and added guidance on LFT to H2
