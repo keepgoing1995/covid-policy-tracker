@@ -1,5 +1,5 @@
 # OxCGRT Coding Interpretation Guide
-***Version 1.12 <br/>Date: 11 March 2022***
+***Version 1.13 <br/>Date: 21 April 2022***
 
 This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such.
 
@@ -247,6 +247,9 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 - We record the date this policy comes into effect, not that it was announced. This may be the date on which people are required to have a first or second dose by.
 - We do not code enforcement, only the presence of the policy.
 - If vaccination is mandatory in a subnational region as a result of an official national or local government policy, we record this in V4. We select V4 when there is evidence from anywhere within a country/region/territory that this group is subject to mandatory vaccination rules. If this is happening in a subnational region, but not nationally, we still record it here.
+- If there is a vaccine mandate in place for workers of certain occupations, and non-vaccinated people in this occupation have the option of testing regularly to opt out of vaccination, we still record this. This is distinct from the requirement for non-vaccinated people to test when entering areas of public life like workplaces, public events, and public transport in cases where entry requires a vaccination pass. This is distinct as vaccine passes are:   A. Optional, B. Not a requirement of people to be able to work in their specific occupation C. Related to accessing public life. 
+- We clearly detail in the qualitative notes if a mandate has an ‘opt out’ clause enabled by testing, but we are recording the vaccine mandate policy in place, not its enforcement. The requirement for people to be mandated is the focus, and the requirement for testing of non-vaccinated people is of sufficient stringency to warrant recording. Therefore, mandates with and without testing opt outs are recorded in V4. The notes enable data users to separate these if desired.
+
 
 ### V1 and V2- Category specific guidance 
 
@@ -293,6 +296,7 @@ There are a few general rules our coders follow while collecting data:
  - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
 
  ## Interpretation guide changelog
+- 18 April 2022: V1.13 added detail to V4 interpretation
 - 11 March 2022: V1.12 added V4- Mandatory Vaccination, and detail to H3, V1, and 'Best fit' table
 - 27 September 2021: V1.11 noted that E3, E4, and H4 are no longer being updated
 - 8 July 2021: V1.10 added guidance for vaccination/exemptions coding, added Vaccination policy interpretation guidance, edits to C1 for school holidays
