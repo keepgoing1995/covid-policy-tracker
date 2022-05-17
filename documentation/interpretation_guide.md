@@ -225,6 +225,14 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
     - Under its Emergency Powers Act, the Finnish government used its emergency powers to ban visitors from care institutions, health care units and hospitals, with some family exceptions on a case-by-case basis
     - Ban on visitation from all non-essential personnel. No visitors are allowed unless in exceptional circumstances such as compassionate or end of life scenario
 
+### 0 vs 1 thresholds 
+ 
+Here we record specifics for how to code 0 and 1 levels when policies are reduced over time, to ensure consistency.
+
+| **0- Equivalent/comparable to pre-Covid times** | **1-Significant differences to pre-Covid times, significant behavioural and/or operational differences**| 
+| --- | --- | 
+No social distancing <br /> Full capacity <br /> Regular opening hours <br /> No facial covering requirement <br /> Any recommendations that are not to close, such as use of facial coverings | Regular Lateral Flow Testing without PCR follow up <br /> Social distancing <br /> Requirement for facial coverings <br /> Altered operating times <br /> Reduced capacity <br /> Use of close contact bubbles <br /> Significant Cleaning and ventilation <br /> Requirement to check in with track and trace  | 
+
 ### V1- Vaccine prioritisation
 
 - We code this from when the official priority groups plan is published, not from when potential categories are discussed informally.
@@ -235,6 +243,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 - We select categories in V2 when there is evidence from anywhere within a country/region/territory that this group is being vaccinated. This logic **differs** from the logic currently used to code H7, where we only code a new ordinal level when this is the situation nationally, for at least 20% of the target group. We may re-code H7 in the future in order to align these two approaches.
 - If V2 eligibility/availability and therefore access to vaccines is universal, we select all general ages above 16 in V2. if the vaccine is approved for additional groups, such as `0-4 yrs infants` this can then be added when the policy comes into effect.
 - If vaccination centres are offering vaccinations to people who walk in, if there is excess capacity, and there is evidence of this being a widespread policy occurring in multiple locations in a consistent manner, we code this under V2 using the relevant age category. If this is open to anyone, we code this as all of the 16+ general age categories. If this is only available to a specific group, we code that group. If this is very sparse and ad-hoc, with only evidence for example from one centre only, we do not code this, but add detail in the note.
+
 
 ### V3- Vaccine financial support
 
