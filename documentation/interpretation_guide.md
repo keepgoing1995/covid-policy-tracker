@@ -9,7 +9,7 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 
 ### C1 - School Closures
 
-- In October 2020 the definition of C1 was expanded at level 1, to include both recommendations and significant differences compared to non-COVID 19 operations. This means even in the absence of a recommendation to close, we may report a jurisdiction at C1=1 if they impose social distancing, capacity limitations or other substantial public health precautions that result in significant differences as compared to usual, non-Covid-19 operations. For example, hybrid in-person/online learning models to reduce the number of individuals in a classroom could justify a code of 1. 
+- In October 2020 the definition of C1 was expanded at level 1, to include both recommendations and significant differences compared to non-COVID 19 operations. This means even in the absence of a recommendation to close, we may report a jurisdiction at C1=1 if they impose social distancing, capacity limitations or other substantial public health precautions that result in significant differences as compared to usual, non-Covid-19 operations. For example, hybrid in-person/online learning models to reduce the number of individuals in a classroom, and the requirement to isolate if a class member tests positive, could justify a code of 1. Situations which may be coded at a zero level are full class sizes, and no requirement to isolate if a class member tests positive.
 - School closures *and* university closures are captured in C1. 
 - Different governments use different wording (e.g. soft-closing, recommend, strongly recommend, recommend without restricting civil liberty), so we standardize what these mean in practice. If the situation is that all schools are closed, or policies in place make it impossible for them to open and meet these requirements, then that would count as a full closure. 
 - Childcare, nurseries, language courses, and driving schools, do not count as educational closures. These are recorded as workplaces under C2
@@ -26,7 +26,7 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 ###  C2- Workplace closing
 
 - When non-essential workplaces are meant to be closed but many people are still going to work regardless, we report the official government policy. In these cases we make a note that people may not be complying with the policy.
-- If workplaces can reopen under sanitation and social distancing requirements – e.g. up to 30% of capacity, and only outdoor seats – this is a 1 (recommend closing). Restrictions are still in place, and the 1 (recommend) captures the extent of these. 
+- If workplaces can reopen under sanitation and social distancing requirements – e.g. up to 30% of capacity or operating at reduced capacity, and/or use only outdoor seats – this is a 1 (recommend closing). Restrictions are still in place, and the 1 (recommend) captures the extent of these. 
 - Voluntary closures are not the same thing as closures mandated by government policy. If a workplace voluntarily closes their business or makes their staff work from home – even if that employer is the government – this does not count under C2.  
 - If a government publishes a list of essential business, we almost always defer to this list. Where the official list of 'essential activities' is very long, particularly expansive or contains unusual inclusions, to the point the policy could be reasonably interpreted as a 2, it is up to the coder’s best judgement on a case-by-case basis, and this is recorded in detail in the note. We try to be mindful of cases where governments may declare every business ‘essential’ or use other terminology that is inconsistent with general practice. In the absence of a list we code based on the below list of essential businesses.
 - Businesses usually considered to be essential are: Healthcare, groceries, take-out food, hardware stores, plumbers/electricians, legal services, education preparations (teachers planning courses), limited business operations support (tiny staff capacity to ensure remote working can continue).
@@ -51,9 +51,9 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 ### C5- Public Transportation
 
 - *Some examples that could indicate a 0 (no policy):*
-    - Public transport is open but with social distancing and mask wearing requirements.
+    - Public transport is open but with social distancing requirements.
 - *Some examples that could indicate a 1 (recommended):* 
-    - Encouraging public transport usage only by essential workers, and discouraging use by members of public, closing major routes, closing all but specific service routes (ex: services for persons with disabilities and the elderly), number of services running is significantly reduced. If an increased number of buses have been put on the roads in order to dilute capacity, and enable greater social distancing, the rationale of the C5 indicator would capture this by coding ‘recommended’, as the spirit of the indicator is to reflect reduced capacity in any transportation unit, and the intention of limiting the numbers of people present.
+    - Requirement to wear a mask, encouraging public transport usage only by essential workers, and discouraging use by members of public, closing major routes, closing all but specific service routes (ex: services for persons with disabilities and the elderly), number of services running is significantly reduced. If an increased number of buses have been put on the roads in order to dilute capacity, and enable greater social distancing, the rationale of the C5 indicator would capture this by coding ‘recommended’, as the spirit of the indicator is to reflect reduced capacity in any transportation unit, and the intention of limiting the numbers of people present.
 - *Some examples that could indicate a 2 (required):*
     - The general public are prohibited from public transport (exceptions allowed for essential workers or some other specific category), total shutdowns of services to align with other movement restrictions.
 - If closures of transport seem to be primarily the result of decreasing demand rather than deliberate government policy to prevent spreading, this is judged by our coders on a case-by-case basis, but if there are substantial changes to schedules we would consider coding a 1.
@@ -123,7 +123,8 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 ### H1- Public Information Campaigns
 
 - Evidence for the beginning of a coordinated campaign includes a website being launched, an official announcement or press release of a campaign, or government and health department social media announcements of a campaign. 
-- There have been very few cases where we record the end of a public information campaign. These are rarely announced officially, but evidence for the end of a campaign can be seen through a very out of date web page and a lack of any COVID-related communications, policies, or announcements from the government. The context of the broader policy environment should corroborate the idea that the government has stopped communicating about COVID-19 to citizens. A detailed note with evidence will be included to explain this.
+- The end of campaigns are rarely announced officially, but evidence for the winding down of a campaign (coded as a 1) can be seen through an out of date web page (2 or more months) and a lack of any COVID-related communications, policies, or announcements from the government, health ministry, or official social media pages. If evidence is still present of a dormant, or rarely updated COVID-19 information campaign, we may code a 1. If there is no guidance remaining at all, or a campaign over 6 months out of date, or only daily reporting of case numbers, we may code a 0.
+- 2 levels may be recorded when there are regular updates on official government web pages, and official social media pages, and there is good evidene of changing guidance and regular and active communication to the public
 
 ### H2 - Testing Policy
 
@@ -139,6 +140,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
     - Announcing the first identified case in a country/territory and that testing is available for that first case and others (if needed)
     - A policy announced to begin scaling up testing capacity (if the above have not already occurred)
     - Announcing partnerships with private pharmacies/other partnerships (if the above have not already occurred)
+    - LFT tests available, but no PCR follow up, PCR only available to specific groups
 - *Some examples that could indicate a 2:*
     - Announcement of a broader plan that includes funding and mobilizing resources to support local testing
     - Testing announced as available for all symptomatic people or all people in suspicion of being in contact with a case
@@ -209,7 +211,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
  - The provision of guidance and specific information campaign material for LTCFs for elderly people is coded as a 1. Public officials urging caution regarding the protection of elderly  people can also be coded here, for example on social media platforms- in the same way as the H1 indicator.
  - If the C6 indicator is 2 or a 3, this can count as a 2 or a 3 for H8, because as the elderly are a subset of the general population, orders for all to stay at home therefore require elderly people to stay at home.
  - If there are both policies recommending or requiring elderly people to stay at home, and also policies in place regarding Long Term Care Facilities , the most stringent policy is coded. While the priority is to record policies in LTCFs, if these are not in place, policies regarding stay at home requirements specifically for elderly people are equally valid. 
- - If masks are required to be worn generally in the country/region/territory, including in elderly care homes, this does not warrant a 1 coding for H8. 
+ - If masks are required to be worn generally in the country/region/territory, including in elderly care homes, this requires a 1 coding for H8. 
 - *Some examples that could indicate a 1:*
   - In Santa Catarina, Brazil (SC), the state government issued a Decree recommending elderly people to stay home and only go outside for necessary activities
   - Sanitation, hygiene, and distancing recommendations are made for elderly care homes
