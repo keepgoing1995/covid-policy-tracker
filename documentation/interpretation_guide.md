@@ -1,5 +1,5 @@
 # OxCGRT Coding Interpretation Guide
-***Version 1.13 <br/>Date: 21 April 2022***
+***Version 1.14 <br/>Date: 24 May 2022***
 
 This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such.
 
@@ -307,6 +307,7 @@ There are a few general rules our coders follow while collecting data:
  - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
 
  ## Interpretation guide changelog
+- 23 May 2022: V1.14 added 0 vs 1 table, edited interpretation for C5, H1, H2, H8
 - 18 April 2022: V1.13 added detail to V4 interpretation
 - 11 March 2022: V1.12 added V4- Mandatory Vaccination, and detail to H3, V1, and 'Best fit' table
 - 27 September 2021: V1.11 noted that E3, E4, and H4 are no longer being updated
