@@ -123,7 +123,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 ### H1- Public Information Campaigns
 
 - Evidence for the beginning of a coordinated campaign includes a website being launched, an official announcement or press release of a campaign, or government and health department social media announcements of a campaign. 
-- The end of campaigns are rarely announced officially, but evidence for the winding down of a campaign (coded as a 1) can be seen through an out of date web page (2 or more months) and a lack of any COVID-related communications, policies, or announcements from the government, health ministry, or official social media pages. If evidence is still present of a dormant, or rarely updated COVID-19 information campaign, we may code a 1. If there is no guidance remaining at all, or a campaign over 6 months out of date, or only daily reporting of case numbers, we may code a 0.
+- The end of campaigns are rarely announced officially, but evidence for the winding down of a campaign (coded as a 1) can be seen through an out of date web page and a lack of any COVID-related communications, policies, or announcements from the government, health ministry, or official social media pages. If evidence is still present of a dormant, or rarely updated COVID-19 information campaign, we may code a 1. If there is no guidance remaining at all, or a campaign over 6 months out of date, or only daily reporting of case numbers, we may code a 0.
 - 2 levels may be recorded when there are regular updates on official government web pages, and official social media pages, and there is good evidene of changing guidance and regular and active communication to the public
 
 ### H2 - Testing Policy
