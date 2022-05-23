@@ -233,7 +233,7 @@ Here we record specifics for how to code 0 and 1 levels when policies are reduce
 
 | **0- Equivalent/comparable to pre-Covid times** | **1-Significant differences to pre-Covid times, significant behavioural and/or operational differences**| 
 | --- | --- | 
-No social distancing <br /> Full capacity <br /> Regular opening hours <br /> No facial covering requirement <br /> Any recommendations that are not to close, such as use of facial coverings | Regular Lateral Flow Testing without PCR follow up <br /> Social distancing <br /> Requirement for facial coverings <br /> Altered operating times <br /> Reduced capacity <br /> Use of close contact bubbles <br /> Significant Cleaning and ventilation <br /> Requirement to check in with track and trace  | 
+No social distancing <br /> Full capacity <br /> Regular opening hours <br /> No facial covering requirement <br /> Any recommended change to operations (such as use of facial coverings) that is not a recommendation to close | Regular Lateral Flow Testing <br /> Social distancing <br /> Requirement for facial coverings <br /> Altered operating times <br /> Reduced capacity <br /> Use of close contact bubbles <br /> Significant cleaning and ventilation <br /> Requirement to check in with track and trace  | 
 
 ### V1- Vaccine prioritisation
 
