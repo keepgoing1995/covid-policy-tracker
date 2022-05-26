@@ -123,8 +123,8 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 ### H1- Public Information Campaigns
 
 - Evidence for the beginning of a coordinated campaign includes a website being launched, an official announcement or press release of a campaign, or government and health department social media announcements of a campaign. 
-- The end of campaigns are rarely announced officially, but evidence for the winding down of a campaign (coded as a 1) can be seen through an out of date web page and a lack of any COVID-related communications, policies, or announcements from the government, health ministry, or official social media pages. If evidence is still present of a dormant, or rarely updated COVID-19 information campaign, we may code a 1. If there is no guidance remaining at all, or a campaign over 6 months out of date, or only daily reporting of case numbers, we may code a 0.
-- 2 levels may be recorded when there are regular updates on official government web pages, and official social media pages, and there is good evidene of changing guidance and regular and active communication to the public
+- The end of campaigns are rarely announced officially, but evidence for the winding down of a campaign (coded as a 1) can be seen through an out of date web page and a lack of any COVID-related communications, policies, or announcements from the government, health ministry, or official social media pages. If evidence is still present of a dormant, or rarely updated COVID-19 information campaign, we may code a 1. If there is no guidance remaining at all, or a campaign over 6 months out of date we may code a 0.
+- We still record H1=2 when there are regular updates on official government web pages, and official social media pages, and there is good evidene of changing guidance and regular and active communication to the public
 
 ### H2 - Testing Policy
 
@@ -307,7 +307,7 @@ There are a few general rules our coders follow while collecting data:
  - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
 
  ## Interpretation guide changelog
-- 23 May 2022: V1.14 added 0 vs 1 table, edited interpretation for C5, H1, H2, H8
+- 23 May 2022: V1.14 added 0 vs 1 table, edited interpretation for C5, H1, H2, H8, mask wearing guidance now recorded as a '1' level for some indicators where previously '0'
 - 18 April 2022: V1.13 added detail to V4 interpretation
 - 11 March 2022: V1.12 added V4- Mandatory Vaccination, and detail to H3, V1, and 'Best fit' table
 - 27 September 2021: V1.11 noted that E3, E4, and H4 are no longer being updated
