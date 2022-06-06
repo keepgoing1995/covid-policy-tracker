@@ -10,7 +10,7 @@
 - We have added data for 3 new indicators on vaccination policies in a standalone CSV
 - We have included subnational data for Chinese provincial-level jurisdictions in our main data product
 -->
-- We have added guidance on what constitutes a 0 or a 1 as policies wind down to the [coding interpretation guide](documentation/interpretation_guide.md), including editing some indicators so mask wearing warrants a '1' level code, where previously '0'
+- We have added guidance on what constitutes a 0 or a 1 as policies wind down to the [coding interpretation guide](documentation/interpretation_guide.md)
 - We have published our V4 indicator recording mandatory [_vaccination_ policies](documentation/codebook.md#vaccination-policies) and an experimental csv publishing [differentiated vaccination policies](https://github.com/OxCGRT/covid-policy-scratchpad/tree/master/differentiated_vaccination_policies).
 - We have published our full national dataset for our V1, V2, and V3 indicators recording [_vaccination_ policies](documentation/codebook.md#vaccination-policies)
 - We have stopped updating the `OxCGRT_latest_withnotes.csv` file because of GitHub's 100mb file size limit. Instead, we are now publishing `OxCGRT_withnotes_2020.csv` and `OxCGRT_withnotes_2021.csv` as separate files. The `latest_withnotes` file only contains data up until early-September 2021. We will keep it active for a few months, as some people rely on it for scripts, but it will eventually be depricated and removed as it no longer contains our "latest" data.
