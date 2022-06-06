@@ -1,5 +1,5 @@
 # OxCGRT Coding Interpretation Guide
-***Version 1.14 <br/>Date: 24 May 2022***
+***Version 1.14 <br/>Date: 7 June 2022***
 
 This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such.
 
@@ -10,6 +10,7 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 ### C1 - School Closures
 
 - In October 2020 the definition of C1 was expanded at level 1, to include both recommendations and significant differences compared to non-COVID 19 operations. This means even in the absence of a recommendation to close, we may report a jurisdiction at C1=1 if they impose social distancing, capacity limitations or other substantial public health precautions that result in significant differences as compared to usual, non-Covid-19 operations. For example, hybrid in-person/online learning models to reduce the number of individuals in a classroom, and the requirement to isolate if a class member tests positive, could justify a code of 1. Situations which may be coded at a zero level are full class sizes, and no requirement to isolate if a class member tests positive.
+- A requirement to wear masks in schools is not recorded in the ordinal scale here, as it is captured in H6
 - School closures *and* university closures are captured in C1. 
 - Different governments use different wording (e.g. soft-closing, recommend, strongly recommend, recommend without restricting civil liberty), so we standardize what these mean in practice. If the situation is that all schools are closed, or policies in place make it impossible for them to open and meet these requirements, then that would count as a full closure. 
 - Childcare, nurseries, language courses, and driving schools, do not count as educational closures. These are recorded as workplaces under C2
@@ -28,6 +29,7 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 - When non-essential workplaces are meant to be closed but many people are still going to work regardless, we report the official government policy. In these cases we make a note that people may not be complying with the policy.
 - If workplaces can reopen under sanitation and social distancing requirements – e.g. up to 30% of capacity or operating at reduced capacity, and/or use only outdoor seats – this is a 1 (recommend closing). Restrictions are still in place, and the 1 (recommend) captures the extent of these. 
 - Voluntary closures are not the same thing as closures mandated by government policy. If a workplace voluntarily closes their business or makes their staff work from home – even if that employer is the government – this does not count under C2.  
+- - A requirement to wear masks in the workplace is not recorded in the ordinal scale here, as it is captured in H6
 - If a government publishes a list of essential business, we almost always defer to this list. Where the official list of 'essential activities' is very long, particularly expansive or contains unusual inclusions, to the point the policy could be reasonably interpreted as a 2, it is up to the coder’s best judgement on a case-by-case basis, and this is recorded in detail in the note. We try to be mindful of cases where governments may declare every business ‘essential’ or use other terminology that is inconsistent with general practice. In the absence of a list we code based on the below list of essential businesses.
 - Businesses usually considered to be essential are: Healthcare, groceries, take-out food, hardware stores, plumbers/electricians, legal services, education preparations (teachers planning courses), limited business operations support (tiny staff capacity to ensure remote working can continue).
 - Some businesses that are not essential: In-person retail, personal grooming (salons, spas, barbers etc), dine-in restaurants, movie theaters, entertainment/theme parks, nightclubs.
@@ -40,6 +42,7 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 - When all public gatherings are cancelled, but people can still go to church, we record this as a 2 (all gatherings cancelled), but make a note about the exception for religious gatherings. 
 - There is no explicit cut off point for a ‘mass gathering’. If really large events, such as political protests, can go ahead, but with strict social distancing and hygiene measures in place, this could be reported as 'recommended'. 
 - If a venue for public events is able to open (eg. a concert hall), but with a specified percentage of original capacity, this is reported at the 1 level. 
+- - A requirement to wear masks at public events is not recorded in the ordinal scale here, as it is captured in H6
 - If public events are banned, but one large event was able to go ahead with stringent social distancing measures as a one off (e.g. the F1 Grand Prix), this is recorded as a 2. This is consistent with the logic where if people are able to attend religious gatherings, but in general all other events were cancelled we do not change the code, but record this with a detailed note. This captures the dominant trend in place in a country/territory or state.
 
 ### C4- Restrictions on gatherings 
@@ -53,10 +56,11 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 - *Some examples that could indicate a 0 (no policy):*
     - Public transport is open but with social distancing requirements.
 - *Some examples that could indicate a 1 (recommended):* 
-    - Requirement to wear a mask, encouraging public transport usage only by essential workers, and discouraging use by members of public, closing major routes, closing all but specific service routes (ex: services for persons with disabilities and the elderly), number of services running is significantly reduced. If an increased number of buses have been put on the roads in order to dilute capacity, and enable greater social distancing, the rationale of the C5 indicator would capture this by coding ‘recommended’, as the spirit of the indicator is to reflect reduced capacity in any transportation unit, and the intention of limiting the numbers of people present.
+    - Encouraging public transport usage only by essential workers, and discouraging use by members of public, closing major routes, closing all but specific service routes (ex: services for persons with disabilities and the elderly), number of services running is significantly reduced. If an increased number of buses have been put on the roads in order to dilute capacity, and enable greater social distancing, the rationale of the C5 indicator would capture this by coding ‘recommended’, as the spirit of the indicator is to reflect reduced capacity in any transportation unit, and the intention of limiting the numbers of people present.
 - *Some examples that could indicate a 2 (required):*
     - The general public are prohibited from public transport (exceptions allowed for essential workers or some other specific category), total shutdowns of services to align with other movement restrictions.
 - If closures of transport seem to be primarily the result of decreasing demand rather than deliberate government policy to prevent spreading, this is judged by our coders on a case-by-case basis, but if there are substantial changes to schedules we would consider coding a 1.
+- A requirement to wear masks on public transport is not recorded in the ordinal scale here, as it is captured in H6
 
 ### C6- Stay at Home Order
 
@@ -74,6 +78,7 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 - *Some examples that could indicate a 2:* 
     - Closing interstate highways/waterways, prohibiting or banning travel from certain regions, requirement of negative test result,  intensive checks on quarantine, requiring quarantine in a hotel or other standardized state-run facility
 If there are restrictions for the circulation of private cars based on certain criteria (e.g. ending of the license number) to reduce the number of vehicles on the streets, we also report it as restriction of internal movement.
+- A requirement to wear masks for internal movement is not recorded in the ordinal scale here, as it is captured in H6
 
 
 ### C8-  International Travel Controls
@@ -87,6 +92,7 @@ If there are restrictions for the circulation of private cars based on certain c
 - C8 refers to incoming international travellers. Bans on people travelling internationally due to stay at home requirements are not recorded here.
 - If land borders are closed, but international flights are permitted, then still we record C8 based on whether there is a total ban on entry from some countries, and if not, based on screening or quarantine requirements. If residents of the closed border countries could still get on a flight, then this does not constitute a full ban. If the policy would prevent *most* people from a certain country from entering, representing a ban on entry from that country, then this could be considered an edge case for recording a 3 - ban on entry from some countries.
 - This indicator is to record policies relating to incoming travellers to the jurisdiction being coded, not restrictions on outbound travel.
+- A requirement to wear masks for international travel is not recorded in the ordinal scale here, as it is captured in H6
 - **Constituent countries**: For constituent countries/regions/territories where the international travel restrictions may be determined by another country/region/territory, we record the policies and rules that apply to the jurisdiction being coded, in order to reflect the de facto lived reality of citizens there. This may mean coding a C8 that is set by another government if they control the international travel of a constituent country. If the jurisdiction being coded has a more stringent C8 policy imposed by another country/region/territory, we code the most stringent policy in place. For example- Puerto Rico’s international travel restrictions are set by the government or PRI, and the US federal government, meaning C8 can be seen as both a national and subnational unit. We code the most stringent C8 policy applying to PRI, even if this is from another country/region/territory (in this case, the USA). Constituent  countries/regions/territories to consider this for C8 are: Aruba, American Samoa, Bermuda, Greenland, Guam, New Caledonia, Puerto Rico, French Polynesia, and the United States Virgin Islands.
 
 
@@ -211,7 +217,7 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
  - The provision of guidance and specific information campaign material for LTCFs for elderly people is coded as a 1. Public officials urging caution regarding the protection of elderly  people can also be coded here, for example on social media platforms- in the same way as the H1 indicator.
  - If the C6 indicator is 2 or a 3, this can count as a 2 or a 3 for H8, because as the elderly are a subset of the general population, orders for all to stay at home therefore require elderly people to stay at home.
  - If there are both policies recommending or requiring elderly people to stay at home, and also policies in place regarding Long Term Care Facilities , the most stringent policy is coded. While the priority is to record policies in LTCFs, if these are not in place, policies regarding stay at home requirements specifically for elderly people are equally valid. 
- - If masks are required to be worn generally in the country/region/territory, including in elderly care homes, this requires a 1 coding for H8. 
+ - If masks are required to be worn generally in the country/region/territory, including in elderly care homes, this does not warrant a 1 coding for H8.
 - *Some examples that could indicate a 1:*
   - In Santa Catarina, Brazil (SC), the state government issued a Decree recommending elderly people to stay home and only go outside for necessary activities
   - Sanitation, hygiene, and distancing recommendations are made for elderly care homes
@@ -307,7 +313,7 @@ There are a few general rules our coders follow while collecting data:
  - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
 
  ## Interpretation guide changelog
-- 23 May 2022: V1.14 added 0 vs 1 table, edited interpretation for C5, H1, H2, H8, mask wearing guidance now recorded as a '1' level for some indicators where previously '0'
+- 7 June 2022: V1.14 added 0 vs 1 table, edited interpretation for indicators on mask wearing (not considered in ordinal scale)
 - 18 April 2022: V1.13 added detail to V4 interpretation
 - 11 March 2022: V1.12 added V4- Mandatory Vaccination, and detail to H3, V1, and 'Best fit' table
 - 27 September 2021: V1.11 noted that E3, E4, and H4 are no longer being updated
