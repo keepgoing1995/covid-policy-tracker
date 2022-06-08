@@ -9,11 +9,10 @@
 - We have added a new indicator, H8 Protection of elderly people to our datasets 
 - We have added data for 3 new indicators on vaccination policies in a standalone CSV
 - We have included subnational data for Chinese provincial-level jurisdictions in our main data product
--->
-- We have published our V4 indicator recording mandatory [_vaccination_ policies](documentation/codebook.md#vaccination-policies) and an experimental csv publishing [differentiated vaccination policies](https://github.com/OxCGRT/covid-policy-scratchpad/tree/master/differentiated_vaccination_policies).
-- We have published our full national dataset for our V1, V2, and V3 indicators recording [_vaccination_ policies](documentation/codebook.md#vaccination-policies)
-- We have stopped updating the `OxCGRT_latest_withnotes.csv` file because of GitHub's 100mb file size limit. Instead, we are now publishing `OxCGRT_withnotes_2020.csv` and `OxCGRT_withnotes_2021.csv` as separate files. The `latest_withnotes` file only contains data up until early-September 2021. We will keep it active for a few months, as some people rely on it for scripts, but it will eventually be depricated and removed as it no longer contains our "latest" data.
 - We have stopped updating data on our E3, E4, and H4 fiscal indicators. The data for these indicators will still be present in the CSV files, but they are not being actively updated beyond August 2021. We plan to actively update the H5 fiscal indicator (government investment in vaccine research).
+-->
+- We have published our V4 indicator recording mandatory [_vaccination_ policies](documentation/codebook.md#vaccination-policies) and an experimental csv publishing [differentiated vaccination policies](https://github.com/OxCGRT/covid-policy-scratchpad/tree/master/differentiated_vaccination_policies). This indicator joins V1, V2, and V3.
+- We have stopped updating the `OxCGRT_latest_withnotes.csv` file because of GitHub's 100mb file size limit. Instead, we are now publishing `OxCGRT_withnotes_2020.csv` and `OxCGRT_withnotes_2021.csv` as separate files. The `latest_withnotes` file only contains data up until early-September 2021. We will keep it active for a few months, as some people rely on it for scripts, but it will eventually be depricated and removed as it no longer contains our "latest" data.
 - We have a mailing list to provide technical users with slightly more detailed release notes, and advance warning of changes to database structure. You can register for these email updates here: http://eepurl.com/hiMsdL
 
 ---
