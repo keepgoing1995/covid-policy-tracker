@@ -1,26 +1,11 @@
-**UPDATE:**
-<!---- 
-- We have published a new format for our indicators ([/data/OxCGRT_latest_combined.csv](data/OxCGRT_latest_combined.csv)) which combines our ordinal measures of policy strictness with their geographical scope. This is described [below](#getting-data-from-this-github-repository).
--  Our main datasets in this repository also include Brazilian state data.
--  we have published a new indicator for vaccine policy, H7
-- We have changed our data source for cases and deaths from the European Centre for Disease Prevention and Control ([ECDC](https://www.ecdc.europa.eu/en)) to the [JHU CSSE data repository](https://github.com/CSSEGISandData/COVID-19) for all countries and the US States. Data sources for the UK nations and Brazil states remain unaltered.
--  We are creating a mailing list to provide technical users with slightly more detailed release notes, and advance warning of changes to database structure. You can register for these email updates here: http://eepurl.com/hiMsdL 
-- We have updated our new academic citation for the project
-- We have added a new indicator, H8 Protection of elderly people to our datasets 
-- We have added data for 3 new indicators on vaccination policies in a standalone CSV
-- We have included subnational data for Chinese provincial-level jurisdictions in our main data product
-- We have stopped updating data on our E3, E4, and H4 fiscal indicators. The data for these indicators will still be present in the CSV files, but they are not being actively updated beyond August 2021. We plan to actively update the H5 fiscal indicator (government investment in vaccine research).
--->
-- We have added guidance on what constitutes a 0 or a 1 as policies wind down to the [coding interpretation guide](documentation/interpretation_guide.md)
-- We have published our V4 indicator recording mandatory [_vaccination_ policies](documentation/codebook.md#vaccination-policies) and an experimental csv publishing [differentiated vaccination policies](https://github.com/OxCGRT/covid-policy-scratchpad/tree/master/differentiated_vaccination_policies). This indicator joins V1, V2, and V3.
-- We have stopped updating the `OxCGRT_latest_withnotes.csv` file because of GitHub's 100mb file size limit. Instead, we are now publishing `OxCGRT_withnotes_2020.csv` and `OxCGRT_withnotes_2021.csv` as separate files. The `latest_withnotes` file only contains data up until early-September 2021. We will keep it active for a few months, as some people rely on it for scripts, but it will eventually be depricated and removed as it no longer contains our "latest" data.
-- We have a mailing list to provide technical users with slightly more detailed release notes, and advance warning of changes to database structure. You can register for these email updates here: http://eepurl.com/hiMsdL
+| **Major update, July 2022** |
+| --- |
+| On 27 July 2022 the OxCGRT implemented data changes which incorporate different policies applying to vaccinated and non-vaccinated people. This results in breaking changes to the csv files published on Github, and the addition of new csv files. </br></br>All of our [documentation](/documentation) has been updated to reflect these changes, and we have also published a [PDF summary of the changes](https://www.bsg.ox.ac.uk/sites/default/files/OxCGRT%20–%C2%A0What%27s%20changed%20summary%2022%20Jul%202022.pdf) separately. </br></br>**For those looking to make a quick update to a script using our main csv files (eg. OxCGRT_latest.csv)**, we recommend: </br><ul><li>Edit indicators C1-C7, H6 and H8 to follow the logic: `CX` to `CXM` (e.g., replace `C1_School closing` with `C1M_School closing`). These indicators report values for the majority of the population vaccinated or non-vaccinated when there is differentiation.</li><li>Edit indicator `C8_International travel controls` to be `C8EV_International travel controls`. This indicator reports the vaccinated value when there is differentiation.</li><li>Edit indices to add `_average` after the index name (e.g., `stringencyindex` to `stringencyindex_average`).</li><li>Change the CSV file name from `OxCGRT_latest.csv` to `OxCGRT_nat_latest.csv` (if you are looking for subnational data, this has been split into separate files).</li></ul> Note that each of these changes reflect a new and slightly different meaning and interpretation. This is explained in detail in our [codebook](documentation/codebook.md). In general, these indicators will report a lower policy level if there is a lenient policy that applies to a large portion of vaccinated people. </br></br>For those who wish to continue using the previous data structure and variables - we have established a [legacy repo](https://github.com/OxCGRT/covid-policy-tracker-legacy) where we will continue to publish updated data in our old format. If you have been using our OxCGRT_latest.csv file, you can access the legacy version of the file at this URL: `https://raw.githubusercontent.com/OxCGRT/covid-policy-tracker-legacy/main/legacy_data_202207/OxCGRT_latest.csv`. </br></br>**For those wishing to explore our new expanded dataset, the key changes are:** </br><ul><li>Data for subnational jurisdictions (USA, Canada, United Kingdom, Brazil, China, India, and Australia) are now published in separate data files.</li><li>The following ten indicators are split into separate variables for non-vaccinated (NV) people and vaccinated (V) people where policies differ between these groups: C1, C2, C3, C4, C5, C6, C7, C8, H6 and H8.</li><li>If there is no differentiated policy in place, we report a single variable for Everyone (E). We also report the policy that applies to a Majority (M) of people at any point in time, based on vaccination rate.</li><li>We publish versions of our indices weighted by vaccination rate.</li></ul> |
 
----
 
 # Oxford Covid-19 Government Response Tracker (OxCGRT)
 
-The Oxford Covid-19 Government Response Tracker (OxCGRT) collects systematic information on which governments have taken which measures, and when. This can help decision-makers and citizens understand governmental responses in a consistent way, aiding efforts to fight the pandemic. The OxCGRT systematically collects information on several different common policy responses governments have taken, records these policies on a scale to reflect the extent of government action, and aggregates these scores into a suite of policy indices.
+The Oxford Covid-19 Government Response Tracker (OxCGRT) collects information on which governments have taken which measures, and when. This can help decision-makers and citizens understand governmental responses in a consistent way, aiding efforts to fight the pandemic. The OxCGRT systematically collects information on several different common policy responses governments have taken, records these policies on a scale to reflect the extent of government action, and aggregates these scores into a suite of policy indices. We also collect differentiated policies data where different policies apply to people who are vaccinated and non-vaccinated.
 
 This is a project from the [Blavatnik School of Government](www.bsg.ox.ac.uk). More information on the OxCGRT is available on the school's website: https://www.bsg.ox.ac.uk/covidtracker. This README contains information about using the database.
 
@@ -31,7 +16,7 @@ Our data is made available free to use for any purpose under a Creative Commons 
 
 - _Recommended reference for academic publications_: Thomas Hale, Noam Angrist, Rafael Goldszmidt, Beatriz Kira, Anna Petherick, Toby Phillips, Samuel Webster, Emily Cameron-Blake, Laura Hallas, Saptarshi Majumdar, and Helen Tatlow. (2021). “A global panel database of pandemic policies (Oxford COVID-19 Government Response Tracker).” Nature Human Behaviour. https://doi.org/10.1038/s41562-021-01079-8
 - _Short credit for media use (CC BY 4.0 License)_: Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, University of Oxford.
-- _Full credit for media use (CC BY 4.0 License)_: Thomas Hale, Jessica Anania, Bernardo Andretti de Mello, Noam Angrist, Roy Barnes, Thomas Boby, Emily Cameron-Blake, Alice Cavalieri, Martina Di Folco, Benjamin Edwards, Lucy Ellen, Jodie Elms, Rodrigo Furst, Kaitlyn Green, Rafael Goldszmidt, Laura Hallas, Beatriz Kira, Maria Luciano, Saptarshi Majumdar, Radhika Nagesh, Anna Petherick, Toby Phillips, Annalena Pott, Julia Sampaio, Helen Tatlow, Adam Wade, Samuel Webster, Andrew Wood, Hao Zha, Yuxi Zhang. Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, University of Oxford. 
+- _Full credit for media use (CC BY 4.0 License)_: Thomas Hale, Anna Petherick, Jessica Anania, Bernardo Andretti de Mello, Noam Angrist, Roy Barnes, Thomas Boby, Emily Cameron-Blake, Alice Cavalieri, Martina Di Folco, Benjamin Edwards, Lucy Ellen, Jodie Elms, Rodrigo Furst, Liz Gomes Ribeiro, Kaitlyn Green, Rafael Goldszmidt, Laura Hallas, Beatriz Kira, Maria Luciano, Saptarshi Majumdar, Thayslene Marques Oliveira, Radhika Nagesh, Toby Phillips, Annalena Pott, Julia Sampaio, Helen Tatlow, Adam Wade, Samuel Webster, Andrew Wood, Hao Zha, Yuxi Zhang. Oxford COVID-19 Government Response Tracker, Blavatnik School of Government, University of Oxford. 
 
 
 ---
@@ -40,13 +25,16 @@ Our data is made available free to use for any purpose under a Creative Commons 
 
 OxCGRT collects publicly available information on 21 indicators of government response. This information is collected by a team of over 200 volunteers from the Oxford community and is updated continuously.
 
-We also include statistics on the number of reported Covid-19 cases and deaths in each country. These are taken from the [JHU CSSE data repository](https://github.com/CSSEGISandData/COVID-19) for all countries and the US States. 
+Alongside our own data, we also include statistics on the number of reported Covid-19 cases and deaths in each country. These are taken from the [JHU CSSE data repository](https://github.com/CSSEGISandData/COVID-19) for all countries and the US States. We also include vaccination data in each jurisdiction – using national-level data from [Our World in Data](https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations.csv) (the percentage of people fully vaccinated) and a range of other sources for subnational vaccination data in [Australia](https://vaccinedata.covid19nearme.com.au/data/air_residence.json),  [Brazil](https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv), [Great Britain](https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations.csv), and the [United States](https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations.csv).
+ 
 
 ### Individual policy measures
 
 Full descriptions of the policy indicators and their meaning can be found in our [codebook](documentation/codebook.md). For more detailed guidance about the codebook and how we interpret the indicators, see the [coding interpretation guide](documentation/interpretation_guide.md). This ensures consistency, and standardizes coding across the database.
 
 Eight of the policy indicators (C1-C8) record information on [_containment and closure_ policies](documentation/codebook.md#containment-and-closure-policies), such as school closures and restrictions in movement. Four of the indicators (E1-E4) record [_economic_ policies](documentation/codebook.md#economic-policies) such as income support to citizens or provision of foreign aid. Eight indicators (H1-H8) record [_health system_ policies](documentation/codebook.md#health-system-policies) such as the Covid-19 testing regime or emergency investments into healthcare. Three indicators (V1-V3) record [_vaccination_ policies](documentation/codebook.md#vaccination-policies); a country/region/territory’s priority list, eligible groups, and the individual cost of vaccination.
+
+We also record [_differentiated policies_](documentation/codebook.md#differentiation-of-policies-by-vaccine-status) for vaccinated people and non-vaccinated people for 10 indicators: C1-C8, H6, and H8. We define differentiated policies to mean policies where vaccinated people can access greater freedoms due to their vaccination status, and are subject to less stringent restrictions. 
 
 Finally, we have a [miscellaneous indicator (M1)](documentation/codebook.md#miscellaneous-policies) for notes that do not fit elsewhere.
 
@@ -61,13 +49,14 @@ To help make sense of the data, we have produced four indices that aggregate the
 
 (_Note: these only include indicators recorded on ordinal scales, so they all exclude E3, E4, H4, H5, and M1._)
 
-The [documentation folder](documentation/) contains an [index methodology](documentation/index_methodology.md) page explaining how the different indexes are calculated and how they are reported for days with incomplete data. This also describes the methodology for the [legacy stringency index](documentation/index_methodology.md#legacy-stringency-index) which is based on the [old](#legacy-database-structure-from-before-25-April-2020) database structure in place prior to 25 April 2020.
+We also produce different iterations of each index giving different weightings to differentiated policies that apply differently to people based on vaccination status. The [documentation folder](documentation/) contains an [index methodology](documentation/index_methodology.md) explaining how the different indices are calculated and how they are reported for days with incomplete data. This also describes the methodology for the [legacy stringency index](documentation/index_methodology.md#legacy-stringency-index) which is based on the [old](#legacy-database-structure-from-before-25-April-2020) database structure in place prior to 25 April 2020.
 
 ### Subnational data
 
-In addition to country-level data, our primary dataset additionally includes some subnational data. So far we have incorporated data for US states, Brazilian States, UK devolved nations, Canadian provinces and territories, and Chinese provinces into the primary dataset on this covid-policy-tracker repository. These subnational entities are included in our [/data/OxCGRT_latest.csv](data/OxCGRT_latest.csv) and [/data/OxCGRT_latest_withnotes.csv](data/OxCGRT_latest_withnotes.csv). But no other CSVs at this stage.
+In addition to country-level data, our primary dataset additionally includes some subnational data. So far we have incorporated data for US states, Brazilian states, UK devolved nations, Canadian provinces and territories, Chinese provinces, Australian states and territories, and Indian states into the primary dataset on this covid-policy-tracker repository. These subnational entities are included in their own designated folders in the [data](data) folder.
 
-Subnational data can be interpreted using the main [codebook](documentation/codebook.md), with additional guidance on subnational-specific interpretation available in the [documentation folder](documentation/subnational_interpretation.md). The state data included in our primary dataset aims to describe the overall policy environment that applies to residents of the state or equivalent jurisdiction, and so includes policies set by the national government where those values are more stringent than state-level action. For data that focuses only on subnational policies, see our additional datasets in the [OxCGRT/USA-covid-policy](https://github.com/OxCGRT/USA-covid-policy) and [OxCGRT/Brazil-covid-policy](https://github.com/OxCGRT/Brazil-covid-policy) respositories.
+Subnational data can be interpreted using the main [codebook](documentation/codebook.md), with additional guidance on subnational-specific interpretation available in the [documentation folder](documentation/subnational_interpretation.md). The subnational data included in our primary dataset aims to describe the overall policy environment that applies to residents of the state or equivalent jurisdiction, and so includes policies set by the national government where those values are more stringent than state-level action. 
+
 
 ### Our documentation and working papers have more information
 
@@ -75,9 +64,9 @@ The most up-to-date description of database components is here in the [documenta
 
 We have also published a national [working paper](https://www.bsg.ox.ac.uk/research/publications/variation-government-responses-covid-19) with our national methodology, data collection protocols, and description of the individual indicators. 
 
-### Legacy database structure (from before 25 April 2020)
+### Legacy database structures
 
-Prior to 25 April 2020 the OxCGRT had a structure of 13 indicators (labelled S1-S13). Data up until this point is archived and still available in the [/legacy_data_20200425](legacy_data_20200425/) folder.
+Prior to 25 April 2020 the OxCGRT had a structure of 13 indicators (labelled S1-S13). And prior to July 2022, our data structure was simpler as we were not publishing policies that differentiated between people who are vaccinated vs. non-vaccinated. You can find data using our legacy database structures in our dedicated [legacy repo](https://github.com/OxCGRT/covid-policy-tracker-legacy).
 
 ## Using OxCGRT data
 
@@ -86,20 +75,30 @@ The OxCGRT is updated continuously in real time. There are numerous ways you can
 ### Getting data from this GitHub repository
 ![Data link to OxCGRT](https://github.com/OxCGRT/covid-policy-tracker/workflows/Data%20link%20to%20OxCGRT/badge.svg) <-- status of connection to OxCGRT database
 
-The [/data](data/) folder in this repo contains recent exports from the OxCGRT database. You are welcome to build applications that draw directly from this repository.
-- The CSV file [`/data/OxCGRT_latest.csv`](data/OxCGRT_latest.csv) reports country/territory- and state-level data presented in "country/territory-day" format (or "state-day" as the case may be), with a list of all indicators for each country/territory as a single row each day. This CSV is updated every hour from the main database, and the badge above shows whether this data link is functioning correctly.
-- The CSV file [`/data/OxCGRT_latest_combined.csv`](data/OxCGRT_latest_combined.csv) reports country/territory- and state-level data in "country/territory-day" format, but gives a single "combined" value for each indicator. As described in the [codebook](documentation/codebook.md), many of our indicators are recorded across two variables: one that records the _strictness_ of the policy, and one that records its _scope_.
-  - This is reported as a combination of the policy level (a number) and the scope flag (a letter: `T` for targetted policies or `G` for general policie; or `F`/`A` flags for indicator E1). For instance, for `C3_Cancel public events` we would have `0`, `1T` (recommend cancelling in some areas), `1G` (recommend cancelling everywhere), `2T` (require cancelling in some areas), `2G` (require cancelling everywhere).
-  - We also include a numerical combination, using the same methodology to [calculate compenents for our indices](documentation/index_methodology.md): a targeted policy is considered a half-step lower than a general jurisdiction-wide policy. For instance, for `C3_Cancel public events` we would have `0`, `0.5` (recommend cancelling in some areas), `1` (recommend cancelling everywhere), `1.5` (require cancelling in some areas), `2` (require cancelling everywhere).
-- The CSV files [`/data/OxCGRT_withnotes_2020.csv`](data/OxCGRT_withnotes_2020.csv) and [`/data/OxCGRT_withnotes_2021.csv`](data/OxCGRT_withnotes_2021.csv) reports country/territory- and state-level data in "country/territory-day" format _with_ a column of notes from our data collectors for each indicator. This is also updated every hour from the main database. Please note that some of the comments contain commas and other characters interpreted as a delimiter, and so may cause problems when parsing this CSV file.
-  - The CSV file [`/data/OxCGRT_latest_withnotes.csv`](data/OxCGRT_latest_withnotes.csv) is a legacy file that contains all the `withnotes data` from January 2020 until September 2021. **The title is misleading, it does not contain the latest data and will eventually be removed.** Please use [`/data/OxCGRT_withnotes_2021.csv`](data/OxCGRT_withnotes_2021.csv) if you want the latest data with notes.
-- The CSV file [`/data/OxCGRT_latest_allchanges.csv`](data/OxCGRT_latest_allchanges.csv) reports country/territory-level data with a list of every _change_ to the database. Every time a policy value changes, or every time a note is added to an indicator, it is represented with it's own new row. (This does not include subnational data.)
-- The [`/data/timeseries`](data/timeseries/) folder reports country/territory-level data as individual timeseries for each indicator (except for the non-ordinal indicators E3, E4, H4, H5 and M1) in CSV format, as well as a combined Excel file with a tab for each indicator. This is updated periodically – usually daily – and the date will be listed in the commit description and at the bottom of each sheet. (This does not include subnational data.)
-- The CSV file [`/data/OxCGRT_US_states_temp.csv`](data/OxCGRT_US_states_temp.csv) is a temporary CSV that presents _only US state-level data_ in "state-day" format, with a column of notes from our data collectors for each indicator. This is updated manually.
-- The CSV file [`/data/OxCGRT_vaccines_full.csv`](data/OxCGRT_vaccines_full.csv) reports country/region/territory data presented in "country/region/territory-day" format, for the three summary vaccine indicators (V1, V2, V3) and 50 subcategories for eligible groups for vaccination for each country/region/territory as a single row each day.
+### Data Folder README
+
+
+On 25 July 2022 the OxCGRT main Github repo was changed. It now includes data changes which incorporate different policies applying to vaccinated and non-vaccinated people, which resulted in new csv files. We will also keep our previous csvs updated in the new legacy repo.
+
+
+Below is a summary of what is contained in each csv file, what each abbreviation represents, and a list of the contents of each folder. The [codebook](/documentation/codebook.md) and [index methodology](documentation/index_methodology.md) documentation contains more information about what each indicator and index represents.
+
+FROM TOBY: IT WOULD BE GOOD TO ADD A SIMPLE TABLE LIKE THIS:
+| File designation | E | NV | V | M* |
+| --- | --- | --- | --- | --- |
+| [`latest`](/data) | x | x | x | yes |
+| [`latest_all_changes`](/data) | x | x | x | yes |
+| [`latest_combined*`](/data) | x | x | x | yes |
+| [`differentiated withnotes`](/data) | yes | yes | yes | yes |
+| [`timeseries`](/data) | x | x | x | yes |
+
+
+*Note: In the `latest_combined` files, please note that as described in the codebook, many of our indicators are recorded across two variables: one that records the strictness of the policy, and one that records its scope. 
+- This is reported as a combination of the policy level (a number) and the scope flag (a letter: T for targeted policies or G for general policie; or F/A flags for indicator E1). For instance, for C3_Cancel public events we would have 0, 1T (recommend cancelling in some areas), 1G (recommend cancelling everywhere), 2T (require cancelling in some areas), 2G (require cancelling everywhere).
+- We also include a numerical combination, using the same methodology to calculate compenents for our indices: a targeted policy is considered a half-step lower than a general jurisdiction-wide policy. For instance, for C3_Cancel public events we would have 0, 0.5 (recommend cancelling in some areas), 1(recommend cancelling everywhere), 1.5 (require cancelling in some areas), 2 (require cancelling everywhere).
 
 ### Getting data through our API
-You can also get some OxCGRT national-level data through our API. Documentation for this is [published here](https://covidtracker.bsg.ox.ac.uk/about-api).
+You can also get some OxCGRT national-level data through an API, although this is out-of-date and does not reflect our new (post July 2022) data structure with policies that differentiate between vaccinated and non-vaccinated people. We do not recommend new users use this API. Documentation for this is [published here](https://covidtracker.bsg.ox.ac.uk/about-api).
 
 ### Data quality
 
@@ -108,11 +107,11 @@ It is important to understand the limitations of this dataset, most of which ste
 For details on how these issues around patchy or missing data affect our index calculations, please see our [documentation on calculating indices](documentation/index_methodology.md).
 
 - **Be skeptical of reductions in index values**. Incomplete or missing data will sometimes cause a dip in the calculated  index (we conservatively treat some missing values as 0). For most countries, a reduction in index level that is recent, relatively small (less than 10 points), or only lasts a couple of days, is more likely the result of missing data rather than a legitimate reduction in the underlying policy.
-- **Not all countries are equally up to date**. We try to ensure that all countries and relevant subnational units are updated at least once a week, and most countries are updated more frequently. But there will inevitably be "patchiness" within the last week.
+- **Not all countries are equally up to date**. We try to ensure that all countries and relevant subnational units are updated at least once every two weeks, and many countries are updated more frequently. But there will inevitably be "patchiness" within the last month.
 - **For each country/territory, some indicators will be missing in some days**. As our data collectors find information, they will update a country/territory in real time. This means a country/territory may only have up-to-date information for some indicators, but not all.
-- **Some indicators (and therefore, index values) will be changed retroactively.** We aim to have a second pair of eyes review every data point in the OxCGRT. As at 19 May 2020, the majority of our 400,000 data points are yet to be reviewed. Inevitably, some things may be tweaked in this review process, leading to changes to past dates. We recommend you frequently download fresh data from OxCGRT, rather than relying on an old export.
+- **Some indicators (and therefore, index values) will be changed retroactively.** We aim to have a second pair of eyes review every data point in the OxCGRT. Inevitably, some things may be tweaked in this review process, leading to changes to past dates. We recommend you frequently download fresh data from OxCGRT, rather than relying on an old export.
 - **Null values are not the same as 0**. The gaps described above – where countries are not up to date, or where some indicators are missing – will be represented as null values. These should not be interpreted as a 0, although for the purposes of calculating our indices, we conservatively treat them as such.
-- **Fiscal and monetary indicators are not evenly covered**. We do not yet have comprehensive and high quality coverage of our indicators E3, E4, H4, and H5. You should check the data carefully before using these indicators.
+- **Fiscal and monetary indicators are not evenly covered**. We do not have comprehensive and high quality coverage of our indicators E3, E4, H4, and H5. You should check the data carefully before relying on these indicators, and do not assume they are perfectly comprehensive.
 
 ## Sample analysis
 
