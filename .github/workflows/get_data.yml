@@ -16,8 +16,47 @@ jobs:
           ref: differentiated
       - name: Download raw csv from OxCGRT database
         run: |
-          rm -r data
-          rm -r legacy_data_20200425
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new' -s -f -o 'data/OxCGRT_nat_latest.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=vaccine_full' -s -f -o 'data/OxCGRT_vaccines_full.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes' -s -f -o 'data/OxCGRT_nat_differentiated_withnotes.csv'
+          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/OxCGRT_nat_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/OxCGRT_nat_differentiated_withnotes_" year ".csv")}' 'data/OxCGRT_nat_differentiated_withnotes.csv'
+          rm 'data/OxCGRT_nat_differentiated_withnotes.csv'
+          
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new&countryCode=AUS' -s -f -o 'data/Australia/OxCGRT_AUS_latest.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes&countryCode=AUS' -s -f -o 'data/Australia/OxCGRT_AUS_differentiated_withnotes.csv'
+          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/Australia/OxCGRT_AUS_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/Australia/OxCGRT_AUS_differentiated_withnotes_" year ".csv")}' 'data/Australia/OxCGRT_AUS_differentiated_withnotes.csv'
+          rm 'data/Australia/OxCGRT_AUS_differentiated_withnotes.csv'
+
+          curl 'https://oxcgrtportal.azurewebsites.net/api/CSVDownload?type=Compressed' -s -f -o 'data/OxCGRT_latest LEGACY.csv'
+          awk --lint -F "," 'NR==1 {header=$0}; NF>1 && NR>1 && ($2=="BRA" || $2=="IND") {countrycode=$2; if(! files[countrycode]) {print header > ("data/OxCGRT_" countrycode "_latest LEGACY.csv"); files[countrycode]=1}; print $0 > ("data/OxCGRT_" countrycode "_latest LEGACY.csv")}' 'data/OxCGRT_latest LEGACY.csv'
+          mv 'data/OxCGRT_BRA_latest LEGACY.csv' 'data/Brazil/OxCGRT_BRA_latest LEGACY.csv'
+          mv 'data/OxCGRT_IND_latest LEGACY.csv' 'data/India/OxCGRT_IND_latest LEGACY.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/CSVDownload' -s -f -o 'data/OxCGRT_withnotes LEGACY.csv'
+          awk --lint -F "," 'NR==1 {header=$0}; NF>1 && NR>1 && ($2=="BRA" || $2=="IND") {countrycode=$2; if(! files[countrycode]) {print header > ("data/OxCGRT_" countrycode "_withnotes LEGACY.csv"); files[countrycode]=1}; print $0 > ("data/OxCGRT_" countrycode "_withnotes LEGACY.csv")}' 'data/OxCGRT_withnotes LEGACY.csv'
+          mv 'data/OxCGRT_BRA_withnotes LEGACY.csv' 'data/Brazil/OxCGRT_BRA_withnotes LEGACY.csv'
+          mv 'data/OxCGRT_IND_withnotes LEGACY.csv' 'data/India/OxCGRT_IND_withnotes LEGACY.csv'
+          rm 'data/OxCGRT_latest LEGACY.csv'
+          rm 'data/OxCGRT_withnotes LEGACY.csv'
+
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new&countryCode=CAN' -s -f -o 'data/Canada/OxCGRT_CAN_latest.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes&countryCode=CAN' -s -f -o 'data/Canada/OxCGRT_CAN_differentiated_withnotes.csv'
+          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/Canada/OxCGRT_CAN_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/Canada/OxCGRT_CAN_differentiated_withnotes_" year ".csv")}' 'data/Canada/OxCGRT_CAN_differentiated_withnotes.csv'
+          rm 'data/Canada/OxCGRT_CAN_differentiated_withnotes.csv'
+
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new&countryCode=CHN' -s -f -o 'data/China/OxCGRT_CHN_latest.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes&countryCode=CHN' -s -f -o 'data/China/OxCGRT_CHN_differentiated_withnotes.csv'
+          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/China/OxCGRT_CHN_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/China/OxCGRT_CHN_differentiated_withnotes_" year ".csv")}' 'data/China/OxCGRT_CHN_differentiated_withnotes.csv'
+          rm 'data/China/OxCGRT_CHN_differentiated_withnotes.csv'
+
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new&countryCode=GBR' -s -f -o 'data/United Kingdom/OxCGRT_GBR_latest.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes&countryCode=GBR' -s -f -o 'data/United Kingdom/OxCGRT_GBR_differentiated_withnotes.csv'
+          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/United Kingdom/OxCGRT_GBR_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/United Kingdom/OxCGRT_GBR_differentiated_withnotes_" year ".csv")}' 'data/United Kingdom/OxCGRT_GBR_differentiated_withnotes.csv'
+          rm 'data/United Kingdom/OxCGRT_GBR_differentiated_withnotes.csv'
+          
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new&countryCode=USA' -s -f -o 'data/United States/OxCGRT_USA_latest.csv'
+          curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes&countryCode=USA' -s -f -o 'data/United States/OxCGRT_USA_differentiated_withnotes.csv'
+          awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/United States/OxCGRT_USA_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/United States/OxCGRT_USA_differentiated_withnotes_" year ".csv")}' 'data/United States/OxCGRT_USA_differentiated_withnotes.csv'
+          rm 'data/United States/OxCGRT_USA_differentiated_withnotes.csv'
           
           
       - name: Commit changes
