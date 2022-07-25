@@ -51,7 +51,7 @@ jobs:
           awk -F "," 'NR==1 {header=$0}; NF>1 && NR>1 {year=substr($6,1,4); if(! files[year]) {print header > ("data/United States/OxCGRT_USA_differentiated_withnotes_" year ".csv"); files[year]=1}; print $0 > ("data/United States/OxCGRT_USA_differentiated_withnotes_" year ".csv")}' 'data/United States/OxCGRT_USA_differentiated_withnotes.csv'
           rm 'data/United States/OxCGRT_USA_differentiated_withnotes.csv'
           
-          rm 'legacy_data_20200425'
+          rm -r legacy_data_20200425
           
       - name: Commit changes
         run: |
