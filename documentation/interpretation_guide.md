@@ -1,13 +1,68 @@
 # OxCGRT Coding Interpretation Guide
-***Version 1.14 <br/>Date: 7 June 2022***
+***Version 2.0 <br/>Date: 27 July 2022***
 
-This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such.
+This guide details the resolutions of frequently asked [codebook](codebook.md) interpretation queries, where indicators may be interpreted in different ways. This is in order to ensure consistency, and standardize coding across the database. Queries related specifically to subnational data are labelled as such. This guide is structured as follows:
 
+- [General interpretation guidance](#General-interpretation-guidance)
+- [Differentiated vaccination policy guidance](#Differentiated-vaccination-policy-guidance)
+- [Guidance by codebook indicator](#Guidance-by-codebook-indicator)
+          
 Updates to this coding interpretation are recorded in the [changelog](#Interpretation-Guide-changelog) below.
+
+## General Interpretation Guidance 
+ 
+There are a few general rules our coders follow while collecting data:
+ 
+- **Implementation not announcement:** We start coding a policy from the day the policy was implemented in practice, not the day it was announced.
+- **We report the most stringent government policy** with the highest ordinal value. If the most stringent policy is only present in a limited geographic area or sector, we use a binary flag variable to describe this scope and reflect whether the policy is targeted or general the binary flag model is described in detail here in the [codebook](codebook.md)
+- **Notes and Web Archived links:** For every change we make in the database, we add a note, with a website link to where the information was found. In order to save the webpage that we gained the information from, we webarchive the link. This saves the page on the date that it was accessed to prevent it being lost. These may look like this http://web.archive.org/web/20200517163106/https://covid19.govt.nz/, or http://archive.vn/XifX8. 
+ - The index methodology can be found [here](index_methodology.md)  detailing how the different indices are calculated
+ - **If there are stricter restrictions on a weekend**, we record these stricter policies for just the Saturday and Sunday dates, and the less stringent ones on weekdays, so each data point accurately reflects the situation in that country on that given day
+ - **If coding a country with a contested government or multiple ruling parties**, we follow the guidance to code the dominant tendency, and record the policies of the more formalised government, or the one which governs the larger proportion of the population
+ - **We do not code non-COVID policies for other indicators besides the guidance for C8**, such as those resulting from civil war or natural disasters.
+ - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
+
+## Differentiated Vaccination Policy Guidance
+
+- For each indicator, we record the most stringent policy in place anywhere in the country/region/territory. This applies to all categories of indicators: vaccinated (V), non-vaccinated (NV), majority (M), and everyone (E).
+- For the ten indicators that could have differentiation based on vaccination status:
+  - If there is no policy differentiation related to vaccination status, we just record one policy which applies to everyone (E).
+  - If there are different policies for people based on vaccination status, we record:
+    <br/>- `Non-vaccinated` (NV) - the strictest policy for people without a vaccination
+    <br/>- `Vaccinated` (V) - the strictest policy for people with a vaccination
+- If our data reports a single policy for everyone (E), where there was previously a differentiated policy, this may represent either the end of policy differentiation, or it could represent a targeted lockdown in a single place applying to both non-vaccinated and vaccinated people, while the rest of the country maintains policy differentiation by vaccination status at a lower level of stringency.
+- There does not need to be a vaccine “pass” in place for us to record a differentiated policy. Some jurisdictions have vaccine passes of different kinds (eg. paper, digital certificate, sign-in app) but some countries do not actively enforce their vaccine requirements. We simply record the policy settings for vaccinated/non-vaccinated people, regardless of enforcement. 
+- If countries distinguish between one, two, three or more vaccinations and there are different vaccination related freedoms granted based on the number of doses, we report the freedoms given for the highest number of doses.
+- We accept each jurisdictions’ decision on which vaccine brand, or number of doses makes vaccinated people eligible for less restrictive policies, following an ‘as defined locally’ logic.
+- We record in the notes if vaccination freedoms are granted for less than the full course of doses for each vaccine brand.
+- If vaccinated people are also required to present a negative PCR test, we code this as a closure (2 or 3) to vaccinated people, to reflect the stringency of this measure. We record policies in both the non-vaccinated and vaccinated columns here, to reflect the existence of two different policies for each group. Therefore, a requirement for PCR and vaccination is a closure, and a requirement for PCR OR vaccination is coded as open, for vaccinated people.
+ 
+Indicator specific examples- Vaccine focus:
+
+| ID | Name | Non-vaccinated | Explanation | Vaccinated | Explanation |
+| --- | --- | --- | --- | --- | --- | 
+| C3 | `C3_Public events` | 2 | Vaccines required to enter large concerts and sporting events. No exceptions | 0 | Vaccinated people can attend with no restrictions |
+| C8 | `C8_International travel controls` | 4 | Non-vaccinated people from all countries cannot enter the country | 3 | Vaccinated people can enter, but some bans on entry to all people remain from specific countries |
+| H6 | `H6_Facial coverings` | 4 | Non-vaccinated people must wear masks at all times | 0 | Vaccinated people do not have to wear masks |
+
+Indicator specific examples- PCR test focus:
+
+| ID | Name | Non-vaccinated | Explanation | Vaccinated | Explanation |
+| --- | --- | --- | --- | --- | --- | 
+| C1 | `C1_School closing` | 2 | Students can enter schools with a COVID-19 pass showing negative PCR test or evidence of prior infection | 0 | Students can enter schools with a COVID-19 pass showing vaccination status. No significant operational changes besides this |
+| C2 | `C2_Workplace closures` | 2 | Patrons must present a negative test OR a vaccine to enter nightclubs | 0 | Vaccinated people can enter nightclubs |
+| C5 | `C5_Public transport` | 2 | Non-vaccinated need a COVID-19 pass with negative PCR test to travel on buses | 1 | Vaccinated people can get on buses without testing requirements, subject to reduced capacity |
 
 ## Guidance by codebook indicator
 
 ### C1 - School Closures
+
+#### Differentiated policy guidance
+
+- We record C1 as a differentiated policy if students are required to be vaccinated.
+- If teachers/education staff are required to be vaccinated we do not code C1 as a closure for non-vaccinated people, but record this as a mandatory vaccination in V4.
+
+#### General interpretation guidance
 
 - In October 2020 the definition of C1 was expanded at level 1, to include both recommendations and significant differences compared to non-COVID 19 operations. This means even in the absence of a recommendation to close, we may report a jurisdiction at C1=1 if they impose social distancing, capacity limitations or other substantial public health precautions that result in significant differences as compared to usual, non-Covid-19 operations. For example, hybrid in-person/online learning models to reduce the number of individuals in a classroom, and the requirement to isolate if a class member tests positive, could justify a code of 1. Situations which may be coded at a zero level are full class sizes, and no requirement to isolate if a class member tests positive.
 - A requirement to wear masks in schools is not recorded in the ordinal scale here, as it is captured in H6
@@ -26,6 +81,13 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 
 ###  C2- Workplace closing
 
+#### Differentiated policy guidance
+
+- Here we only record a closure to non-vaccinated people if attendees are required to provide proof of vaccination to enter, not staff.
+- If staff are required to be vaccinated we record this as an occupational vaccine mandate in V4.
+
+#### General interpretation guidance
+
 - When non-essential workplaces are meant to be closed but many people are still going to work regardless, we report the official government policy. In these cases we make a note that people may not be complying with the policy.
 - If workplaces can reopen under sanitation and social distancing requirements – e.g. up to 30% of capacity or operating at reduced capacity, and/or use only outdoor seats – this is a 1 (recommend closing). Restrictions are still in place, and the 1 (recommend) captures the extent of these. 
 - Voluntary closures are not the same thing as closures mandated by government policy. If a workplace voluntarily closes their business or makes their staff work from home – even if that employer is the government – this does not count under C2.  
@@ -38,6 +100,13 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 
 ### C3- Cancel Public Events
 
+#### Differentiated policy guidance
+
+- Here we only record a differentiated policy if attendees are required to provide proof of vaccination to enter, not staff.
+- If staff are required to be vaccinated we record this as an occupational vaccine mandate in V4.
+ 
+#### General interpretation guidance
+
 - When private gatherings of only 10 or less are permitted (e.g. C4=4), this restriction would prevent public events from taking place, so they are recorded as required to cancel, unless there is a specific policy in place permitting public gatherings to go ahead.
 - When all public gatherings are cancelled, but people can still go to church, we record this as a 2 (all gatherings cancelled), but make a note about the exception for religious gatherings. 
 - There is no explicit cut off point for a ‘mass gathering’. If really large events, such as political protests, can go ahead, but with strict social distancing and hygiene measures in place, this could be reported as 'recommended'. 
@@ -47,11 +116,20 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 
 ### C4- Restrictions on gatherings 
 
+#### General interpretation guidance
+
 - When there are variations in numbers for gatherings (e.g. gatherings are banned for more than 5 people with the exceptions of funerals/weddings/outdoor gatherings where it is 30 people) we report the stricter (in this case 5 people indoor) policy while including the less strict outdoor/wedding/funeral gathering limit in the notes.
 - A ban on any gatherings outside of the house would be a 4, as most households are reasonably assumed to be of 10 or less people.
 - If there are restrictions in gatherings based on the capacity of indoor spaces (e.g. up to 30% of the capacity), but there is no mention of any clear cut-off point, we record as 0 adding a note explaining the restriction. If the indoor place is also a workplace (eg restaurant) we would include the note under C2 as well.
  
 ### C5- Public Transportation
+
+#### Differentiated policy guidance
+
+- Here we only record a differentiated policy if passengers are required to provide proof of vaccination to enter, not staff.
+- If staff are required to be vaccinated we record this as a requirement to be vaccinated due to occupation in V4.
+ 
+#### General interpretation guidance
 
 - *Some examples that could indicate a 0 (no policy):*
     - Public transport is open but with social distancing requirements.
@@ -64,12 +142,16 @@ Updates to this coding interpretation are recorded in the [changelog](#Interpret
 
 ### C6- Stay at Home Order
 
+#### General interpretation guidance
+
 - If the government policy is that people should stay home, but people don’t seem to be actually doing this in reality, we still report the official government policy. This would usually be accompanied by note that people may not be complying with this in reality.
 - We record curfews (eg. where people are not allowed out between 6pm and 6am, or people only allowed for 1 hour a day) as a 2. If people cannot leave the house for multiple days at a time (eg can only go out on a specific day of the week), this would be reported as a 3 for total confinement. 
 - If during non-curfew hours people can go out of the house for non-essential trips, this is still reported as a 2 to fully represent the requirement to limit movement as a result of the curfew hours.
 - For clinically vulnerable groups of people strongly recommended or required to shield at home, we record this as a 1 (recommended) with a ‘general’ flag (if nationwide).
 
 ### C7- Restrictions on Internal Movement
+
+#### General interpretation guidance
 
 - Unless made explicit in a policy, a stay at home order (C6) should not be interpreted as a requirement not to travel (C7), as domestic travel could still be permitted. If there was an explicit restriction on travel (eg. stay-at-home and only allowed within 5km radius for exercise or groceries) then this could also be coded under C7.
 - **For subnational (state-level) data:** C7 is used to record state-level border closures where a state restricts entry from other states from another state, as well as recording restrictions on movement within the state.
@@ -82,6 +164,15 @@ If there are restrictions for the circulation of private cars based on certain c
 
 
 ### C8-  International Travel Controls
+
+#### Differentiated policy guidance
+- If visitors can get a PCR test to avoid quarantine we record this as a 1- screening for everyone. If quarantine is mandatory, and visitors cannot do a test to avoid this, we record a 2.
+- If vaccinated people do not have to quarantine, we record this as a 1 for them (as they are still being ‘screened’ by vaccination status), and if non vaccinated can ‘test out’ of quarantine, we also record this as a 1. If non-vaccinated people must present evidence of a test to arrive in a country, this is therefore a 1. If they must present a test and also quarantine, this is reported as a 2.
+- If the country/region prohibits non-vaccinated people from any country to enter its borders, we record this as a 4 (total closure) for non-vaccinated people.
+- If the country/region prohibits non-vaccinated people from some countries from entering, we record this as a 3 for non-vaccinated people.
+- If non-vaccinated nationals are allowed to enter the country, we do not consider this in the coding. This is in line with guidance below which states that we do not consider the repatriation of nationals when considering border closures.
+ 
+#### General interpretation guidance
 
 - This indicator does not have a binary flag variable to reflect geographic variation in policies. Therefore, we generally record the level of policy that applies everywhere across the jurisdiction - the highest common value of policy nationwide or statewide. We do not report any policies of a higher value that are only available in limited areas.  *For example* if one airport is screening passenger arrivals, but the majority of them are not, this would not be recorded as a 1. All airports across the country/territory would need to be screening before this policy could be seen to apply generally and be recorded.
 - If visitors are meant to self quarantine/isolate after travelling to certain areas, but there are no enforcement or tracking measures in place, we record the official policy accordingly, and make a note that the situation on the ground may not reflect this.
@@ -98,6 +189,8 @@ If there are restrictions for the circulation of private cars based on certain c
 
 ### E1- Income Support
 
+#### General interpretation guidance
+
 -  This indicator does not have a binary flag variable to reflect geographic variation in policies. Therefore, we generally record the level of policy that applies everywhere across the jurisdiction - the highest common value of policy nationwide or statewide. We do not report any policies of a higher value that are only available in limited areas.  *For example*  if income support is only being provided by some cities, and not across the whole country/territory or state, we would not report it. It is only recorded when the support recorded applies nationally or statewide.
 - Formal sector workers are people who are employed with contracts, and pay taxes. Informal workers may be roadside vendors, work on markets, and do not have a formal contract for their work. 
 - If benefits in kind are being given (e.g. dry rations, or school meals), this is recorded as a 0 with a note. It is not recorded as a non-zero value as it is not money being given or salaries replaced.
@@ -108,10 +201,15 @@ If there are restrictions for the circulation of private cars based on certain c
     - *Expedited access to unemployment benefit:* If a state takes policy action to make it faster and easier to access nation or  state/federal unemployment benefits during the COVID-affected period, but doesn’t expand eligibility criteria, this is only recorded as a note. The underlying policy hasn’t changed or expanded to reach more people.
 
 ### E2- Debt/contract relief for households
+
+#### General interpretation guidance
+
 - This indicator does not have a binary flag variable to reflect geographic variation in policies. Therefore, we generally record the level of policy that applies everywhere across the jurisdiction - the highest common value of policy nationwide or statewide. Any policies of a higher value that are only available in limited areas are not recorded.  *For example*  if debt relief is only being provided by some cities, and not across the whole country/territory or state, we would not report it. It is only recorded when the support recorded applies nationally or statewide.
 - Debt relief for business and corporations is not recorded here, as E2 only records debt relief to private households.
 
 ### E3- Fiscal Measures
+
+#### General interpretation guidance
 
 - **We have stopped updating data for E3. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - If the specific monetary value is undisclosed or unclear, we make a note recording the announcement, but don’t record the monetary value. 
@@ -122,17 +220,23 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 
 ### E4- Providing Support to other countries
 
+#### General interpretation guidance
+
 - **We have stopped updating data for E4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - We only record money here that a country/territory/subnational unit DONATES to another country/territory/subnational unit, not that is received. We do not record in-kind support, for example donations of medical equipment, as a monetary equivalent; but we would still record a note of the in-kind support.
 - We record donations to international organisations, such as  WHO, WFP, as long as the country being recorded is the donor and it is to a specific relief fund specifically related to COVID. Donations to a generic WHO fund which might not be used specifically for COVID related issues is not specific enough to record.
 
 ### H1- Public Information Campaigns
 
+#### General interpretation guidance
+
 - Evidence for the beginning of a coordinated campaign includes a website being launched, an official announcement or press release of a campaign, or government and health department social media announcements of a campaign. 
 - The end of campaigns are rarely announced officially, but evidence for the winding down of a campaign (coded as a 1) can be seen through an out of date web page and a lack of any COVID-related communications, policies, or announcements from the government, health ministry, or official social media pages. If evidence is still present of a dormant, or rarely updated COVID-19 information campaign, we may code a 1. If there is no guidance remaining at all, or a campaign over 6 months out of date we may code a 0.
 - We still record H1=2 when there are regular updates on official government web pages, and official social media pages, and there is good evidene of changing guidance and regular and active communication to the public
 
 ### H2 - Testing Policy
+
+#### General interpretation guidance
 
 - While government policies are recorded, capacity issues affect implementation. This therefore requires judgment, about how aspirational a policy is versus how practical it is to see if it is able to meet its propositions. We will sometimes record a lower code than the official announced policy, but will provide sources that demonstrate that there is not capacity on the ground to meet this testing policy.
 - This indicator does not have a binary flag variable to reflect geographic variation in policies. Therefore,  the level of policy that applies everywhere across the jurisdiction is recorded - the highest common value of policy nationwide or statewide. We do not record any policies of a higher value that are only available in limited areas. *For example* if there is not testing available to anyone symptomatic across the whole country/territory or state, but only in certain areas, this would not be reported as a 2 as this does not apply generally. Therefore the highest common value nationwide or statewide is a 1, and this is what we record. 
@@ -167,6 +271,8 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 
 ### H3 - Contact tracing
 
+#### General interpretation guidance
+
 - We are only interested in manual contact tracing that is intended to reach all people known to an newly-diagnosed case. Contact tracing apps do not achieve this goal, and the presence of a contact tracing app in a country/territory would not be recorded here under H3 (although it may be recorded in a note). The difference between the levels here is considering whether this top-notch manual contact tracing is done for some COVID-19 cases (1) or for all cases (2).
 - *Some examples that could indicate a 1*:
     - Declaring that a country/territory has COVID-19 contact tracing capacity before its first case
@@ -179,13 +285,22 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 - When a contact tracing effort transitions from tracing all reported positive cases of individuals to focusing on congregate events or locations where there are multiple positive cases reported, this would be considered a contact tracing effort at the 'limited' or 1 level. 
 
 ### H4 - Emergency investment in healthcare
+
+#### General interpretation guidance
+
 - **We have stopped updating data for H4. The data for this indicator will still be present in the CSV files, but will not be actively updated beyond August 2021.**
 - If specific numbers of spending announced are available, but not a specific date on which this policy was brought into effect, we record the numbers and the exchange rate when mentioned, and explain in the note that this may not have been the exact day that spending began.    
 
 ### H5 - Investment in vaccines
+
+#### General interpretation guidance
+
 - This indicator record spending on vaccines procurement as well as vaccine development spending- therefore covering all vaccine related spending
     
  ### H6 - Facial coverings
+ 
+ #### General interpretation guidance
+ 
  - The difference between the 3 and the 4 levels here is that at 4, a mask is required at all times when leaving the house with no exception. Even if people are in a street and more than the recommended social distance from other people, a mask is still required. 
 - *Some examples that could indicate a 2*
      -  In England it is compulsory to wear masks in shops and some other specific locations (not all)
@@ -195,6 +310,9 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
      - In Spain it is compulsory to wear a mask outside at all times
      
  ### H7 Vaccination policy
+ 
+ #### General interpretation guidance
+ 
 - Geographic coverage needs to be national before this is coded, as we code the lowest common value if there is geographic variation
 - These three criteria regarding availability MUST be met to code a non-zero value
  - 1. There is a de jure policy to vaccinate a population group
@@ -211,6 +329,14 @@ Sometimes governments make ambiguous funding announcements (where it is not clea
 - We code a 5 (Universal Coverage) when the vaccine is available to everyone 16+ or 18+ (the lowest age permitted by the vaccine brand currently), and there is evidence that this is taking place on the ground. 
 
  ### H8 Protection of elderly people
+ 
+#### Differentiated policy guidance
+
+- We record a closure for non-vaccinated if visitors are required to be vaccinated or present a Covid-19 pass.
+- If staff are required to be vaccinated we code this as an occupational vaccine mandate in V4
+ 
+#### General interpretation guidance
+
  - This indicator focuses mainly on institutions where elderly people live, but also has scope to record restrictions that form the equivalent level of protection in settings where elderly people are cared for in the home or community, especially in countries, regions, and territories where institutions are not used.
  - Elderly people are defined here relative to the country, region, or territory being coded, for example the local retirement age, and no absolute chronologic age is defined.
  - Long Term Care Facilities (LTCF) here are used only to refer to institutions for elderly people. Policies for other vulnerable groups are not recorded here- this indicator does not cover vulnerable populations other than specifically elderly people, and does not cover prison populations .
@@ -299,20 +425,10 @@ Here we record where categories have been substituted when category not listed i
 | `Factory staff`   | Meat processing staff (AUS)
 | `Crowded/communal living conditions (dormitories for migrant workers, temporary accommodations)`  | People in communal facilities with an increased risk of infection and outbreaks (with residents of mixed ages)  (SGP) <br/> People living or working in crowded settings (IRL)  <br/> Prison populations (ISR)  <br/> People who live in socially vulnerable situations, such as the homeless or the undocumented. (SWE) <br/>Homeless (KOR)  <br/> Vulnerable and precarious people (homeless…), living in communities (prisons, psychiatric establishments, homes) (FRA)  <br/> People in communal facilities with an increased risk of infection and outbreaks (with residents of mixed ages) (CHE) 
 
-## General Interpretation Guidance 
- 
-There are a few general rules our coders follow while collecting data:
- 
-- **Implementation not announcement:** We start coding a policy from the day the policy was implemented in practice, not the day it was announced.
-- **We report the most stringent government policy** with the highest ordinal value. If the most stringent policy is only present in a limited geographic area or sector, we use a binary flag variable to describe this scope and reflect whether the policy is targeted or general the binary flag model is described in detail here in the [codebook](codebook.md)
-- **Notes and Web Archived links:** For every change we make in the database, we add a note, with a website link to where the information was found. In order to save the webpage that we gained the information from, we webarchive the link. This saves the page on the date that it was accessed to prevent it being lost. These may look like this http://web.archive.org/web/20200517163106/https://covid19.govt.nz/, or http://archive.vn/XifX8. 
- - The index methodology can be found [here](index_methodology.md)  detailing how the different indices are calculated
- - **If there are stricter restrictions on a weekend**, we record these stricter policies for just the Saturday and Sunday dates, and the less stringent ones on weekdays, so each data point accurately reflects the situation in that country on that given day
- - **If coding a country with a contested government or multiple ruling parties**, we follow the guidance to code the dominant tendency, and record the policies of the more formalised government, or the one which governs the larger proportion of the population
- - **We do not code non-COVID policies for other indicators besides the guidance for C8**, such as those resulting from civil war or natural disasters.
- - **Where vaccination and testing exemptions are in place we report the most stringent policy**. Exemptions may include less stringent restrictions for people who have evidence of COVID-19 vaccination, a negative PCR test, or of immunity). Therefore the coding reflects the more stringent government policies applied to people who do not have an exemption (ie. usually a required closure or behaviour). The only time we would report the lower policy is if anyone can arrive and get tested onsite with a rapid test to gain entry. We would not code this as a required closure, as anyone can ‘test out’ of restrictions easily. Such at-the-door testing must apply to all sectors within the indicator, and be a government policy, not that of a private business. 
+
 
  ## Interpretation guide changelog
+- 27 July 2022: V2.0 added the differentiated coding interpretation guide.
 - 7 June 2022: V1.14 added 0 vs 1 table, edited interpretation for indicators on mask wearing (not considered in ordinal scale)
 - 18 April 2022: V1.13 added detail to V4 interpretation
 - 11 March 2022: V1.12 added V4- Mandatory Vaccination, and detail to H3, V1, and 'Best fit' table
