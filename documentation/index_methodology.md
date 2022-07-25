@@ -1,12 +1,21 @@
 # Methodology for calculating indices
 
-***Index methodology version 3.7 <br/>27 September 2021***
+***Index methodology version 4.0 <br/>27 July 2022***
 
-The Oxford Covid-19 Government Response Tracker ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)) tracks individual policy measures across 20 indicators. We also calculate several indices to give an overall impression of government activity, and this page describes how these indices are calculated. Changes to this methodology are recorded in the [changelog](#index-methodology-changelog) below.
+| **Major update, July 2022** |
+| --- |
+| In July 2022 the OxCGRT implemented data changes which incorporate different policies applying to vaccinated and non-vaccinated people. We now publish eight versions of each index, including versions that take averages between the policies that apply to vaccinated and non-vaccinated people. The documentation in this GitHub repository reflects these changes, and we have also published a [PDF summary](https://www.bsg.ox.ac.uk/sites/default/files/OxCGRT%20–%C2%A0What%27s%20changed%20summary%2022%20Jul%202022.pdf). <br/><br/>Our [legacy repo](https://github.com/OxCGRT/covid-policy-tracker-legacy) also publishes the original indices. |
 
-All of our indices are simple averages of the individual component indicators. This is described in equation 1 below where _k_ is the number of component indicators in an index and _I<sub>j</sub>_ is the [sub-index score](#calculating-sub-index-scores-for-each-indicator) for an individual indicator.
+The Oxford Covid-19 Government Response Tracker ([GitHub repo](https://github.com/OxCGRT/covid-policy-tracker), [university website](https://www.bsg.ox.ac.uk/covidtracker)) tracks individual policy measures across 21 indicators. We also calculate several indices to give an overall impression of government activity, and this page describes how these indices are calculated. Changes to this methodology are recorded in the [changelog](#index-methodology-changelog) below.
 
-![overall mean equation](https://latex.codecogs.com/png.latex?%281%29%5Cqquad%20index%3D%5Cfrac%7B1%7D%7Bk%7D%5Csum_%7Bj%3D1%7D%5E%7Bk%7DI_%7Bj%7D)
+This document is structured as follows:
+
+- [Indices](#indices), which gives a high-level overview of the components of each of our 4 types of indices (the Government Response Index, Containment and Health Index, Stringency Index, and Economic Support Index), as well as the different variations of each.
+- [Index calculation](#index-calculation), which describes the formulas used to calculate each variation of an index from its component indicators.
+- [Calculating sub-index scores for each indicator](#calculating-sub-index-scores-for-each-indicator), describes the process we go through to normalise each indicator into a sub-index
+- [Dealing with gaps for display purposes](#dealing-with-gaps-in-the-data-for-display-purposes), summarises how we deal with missing data when calculating our indices.
+
+## Indices
 
 The different indices are comprised as follows:
 
@@ -18,7 +27,65 @@ The different indices are comprised as follows:
 | Economic support index | 2 | | | | | | | | | `x` | `x` | | | | | | | | | |
 | [Legacy stringency index](#legacy-stringency-index) | 7 | `x` | `x` | `?` | `?` | `x` | `?` | `?` | `x` | | | | | `x` | | | | | | |
 
-Two versions of each indicator are present in the database. A regular version which will return `null` values if there is not enough data to calculate the index, and a "display" version which will extraploate to smooth over the last seven days of the index based on the most recent complete data. This is explained [below](#dealing-with-gaps-in-the-data-for-display-purposes).
+We now publish 8 versions of each index – four different versions with different treatment of vaccine-differentiated policies, and then for each of those four, two different versions that handle gaps in data differently.
+
+The four versions with substantial differences are denoted as follows:
+- `_Nonvax` – constructs the index using policies that apply to non-vaccinated people (either `non-vaccinated` (NV) policies if present, or otherwise using `everyone` (E) policies).
+- `_Vax` – constructs the index using policies that apply to vaccinated people (either `vaccinated` (V) policies if present, or otherwise using `everyone` (E) policies).
+- `_SimpleAverage` – takes the sum of `_Nonvax` and `_Vax` indices and divides them by 2.
+- `_WeightedAverage` – takes an average of the `_Nonvax` and `_Vax` indices and weights this by the proportion of the population that are fully vaccinated.
+
+In our simple [`OxCGRT_latest.csv`](/data) CSVs we report indices with the suffix `_Average` (eg. `StringencyIndex_Average`). This is alwauys the weighted average, except for the few jurisdictions for which we do not have vaccinated rate data (and thus cannot calculate a weighted average), in which case it is the simple average.
+
+For each of these four versions of each index, we then publish two versions:
+- A regular version which will return `null` values if there is not enough data to calculate the index.
+- A `_ForDisplay` version which will extrapolate the index to smooth over the last seven days where there is incomplete data. This is described further in our discussion below on [dealing with gaps for display purposes](#dealing-with-gaps-in-the-data-for-display-purposes).
+
+In our [legacy repo](https://github.com/OxCGRT/covid-policy-tracker-legacy), we publish indices as simple averages of the individual component indicators. Calculations of these indices can be found [below](#index-calculation) 
+
+
+
+## Index calculation
+
+In this section, we explore how indices are calculated following differentiation of policies.
+
+#### Non-vaccinated and Vaccinated Indices
+
+For a given jurisdiction, our non-vaccinated and vaccinated indices are simple averages of the individual sub-indices, one for each indicator that comprises the index. This is described in equation 1 below where _k_ is the number of component indicators in an index and _I<sub>j</sub>_ is the [sub-index score](#calculating-sub-index-scores-for-each-indicator) for an individual indicator. If a component indicator is one of the ten for which we record differentiated policy, then we will use either:
+- the NV or V version of the policy (in the non-vaccinated or vaccinated index respectively) where there is a differentiated policy
+- the E (everyone) version of the policy for both the non-vaccinated and vaccinated index where there is no differentiated policy
+
+![non vac vac equation](https://latex.codecogs.com/png.latex?%281%29%5Cqquad%20index%3D%5Cfrac%7B1%7D%7Bk%7D%5Csum_%7Bj%3D1%7D%5E%7Bk%7DI_%7Bj%7D)
+
+This results in two versions of each index that report the overall policy settings that apply to, respectively, non-vaccinated people and vaccinated people.
+
+#### Simple Average Indices
+
+For a given jurisdiction, our simple average indices are the sum of the vaccinated and the non-vaccinated indices divided by two. This is described in equation 2 below where _v_ is the index for the vaccinated, and _nv_ is the index score for the non-vaccinated.
+
+![simple avg equation](https://latex.codecogs.com/svg.image?(2)index&space;=&space;(index_{v}&space;&plus;&space;index_{nv})/2)
+
+
+#### Weighted Average Indices
+
+This weights the index value using the non-vaccinated/vaccinated values based on the proportion of the population that are vaccinated with a complete initial protocol using the data from Our World in Data vaccination dataset's 'fullyvaccinatedperhundred' (with gaps filled) dataset available [here](https://ourworldindata.org/covid-vaccinations).
+- This value is also published in the csv in a column labelled "Population Vaccinated", next to the cases/deaths columns.
+
+Dealing with gaps for display purposes. The population-weighted average uses the following display logic:
+- If no data available before or equal to date -> 0% vaccination is assumed
+- If no "fully_vaccinated_per_hundred" for a specific date -> pull forward the value from the last day it was present
+
+For a given jurisdiction, we first calculated indices for the vaccinated and the non vaccinated. We then weight these values by the percent of the population which are fully vaccinated. This is described in equation 3 below where _v_ is the index for the vaccinated, _nv_ is the index score for the non-vaccinated, _W<sub>v</sub>_ is the weight of population vaccinated (i.e., % vaccinated), and  _W<sub>nv</sub>_ is the weight of population who are non-vaccinated (i.e., % non-vaccinated). Note that the denominator always adds up to 100 (i.e., sum of % of vaccinated and non-vaccinated people in a given country).
+
+![weighted avg equation](https://latex.codecogs.com/svg.image?(3)index&space;=&space;[(index_{v}&space;*&space;W_{v})&space;&plus;&space;(index_{nv}&space;*&space;W_{nv})]/100)
+
+
+#### Legacy Repo Indices
+
+All of our indices in our legacy folder are simple averages of the individual component indicators. This is described in equation 4 below where _k_ is the number of component indicators in an index and _I<sub>j</sub>_ is the sub-index score for an individual indicator.
+
+
+![legacy_repo](https://latex.codecogs.com/svg.image?(4)index%3D%5Cfrac%7B1%7D%7Bk%7D%5Csum_%7Bj%3D1%7D%5E%7Bk%7DI_%7Bj%7D)
 
 ## Calculating sub-index scores for each indicator
 
@@ -58,9 +125,9 @@ Each sub-index score (_I_) for any given indicator (_j_) on any given day (_t_),
 
 This normalises the different ordinal scales to produce a sub-index score between 0 and 100 where each full point on the ordinal scale is equally spaced. For indicators that do have a flag variable, if this flag is recorded as 0 (ie if the policy is geographically _targeted_ or for E1 if the support only applies to _informal sector workers_) then this is treated as a half-step between ordinal values.
 
-Note that the database only contains flag values if the indicator has a non-zero value. If a government has no policy for a given indicator (ie the indicator equals zero) then the corresponding flag is blank/null in the database. For the purposes of calculating the index, this is equivalent to a sub-index score of zero. In other words, _I<sub>j,t</sub>_=0 if _v<sub>j,t</sub>_=0.
+Note that the database only contains flag values if the indicator has a non-zero value. If a government has no policy for a given indicator (ie. the indicator equals zero) then the corresponding flag is blank/null in the database. For the purposes of calculating the index, this is equivalent to a sub-index score of zero. In other words, _I<sub>j,t</sub>_=0 if _v<sub>j,t</sub>_=0.
 
-![sub-index score equation](https://latex.codecogs.com/png.latex?%282%29%5Cqquad%20I_%7Bj%2Ct%7D%3D100%5Cfrac%7Bv_%7Bj%2Ct%7D-0.5%28F_%7Bj%7D-f_%7Bj%2Ct%7D%29%7D%7BN_%7Bj%7D%7D)
+![sub-index score equation](https://latex.codecogs.com/svg.image?(5)I_%7Bj%2Ct%7D%3D100%5Cfrac%7Bv_%7Bj%2Ct%7D-0.5%28F_%7Bj%7D-f_%7Bj%2Ct%7D%29%7D%7BN_%7Bj%7D%7D)
 
 (_if v<sub>j,t</sub>=0 then the function F<sub>j</sub>-f<sub>j,t</sub> is also treated as 0, see paragraph above._)
 
@@ -118,20 +185,23 @@ For example, the date at the time of writing was 22 October. The table below giv
 | 21/10/2020 | 7 | 14 | `null` | 75 |
 | 22/10/2020 (today) | 5 | 14 | `null` | 75 |
 
-## Legacy stringency index
+## April 2020 legacy stringency index
 
-We also report a legacy stringency index that approximates the logic of the first version of the Stringency Index, which only had seven components under our [old database structure](../legacy_data_20200425) with the old indicators S1-S7. We generally do not recommend using this legacy index, but it may be useful for continuity purposes.
+We also report a pre-April 2020 legacy stringency index that approximates the logic of the original version of the Stringency Index, which only had seven components under our old database structure with the old indicators S1-S7 (you can access this data on our [legacy repo](https://github.com/OxCGRT/covid-policy-tracker-legacy)). We generally do not recommend using this legacy index, but it may be useful for continuity purposes.
 
-The legacy indicator only uses seven indicators, and it chooses a single indicator between C3 and C4, and between C6 and C7, selecting whichever of those pairs provides a higher sub-index score. This is because C3 and C4 aim to measure the information previously measured by S3, and similarly for C6, C7 and the old S6. This method, shown in equation 3, faithfully recreates the logic of the old stringency index.
+The legacy indicator only uses seven indicators, and it chooses a single indicator between C3 and C4, and between C6 and C7, selecting whichever of those pairs provides a higher sub-index score. This is because C3 and C4 aim to measure the information previously measured by S3, and similarly for C6, C7 and the old S6. This method, shown in equation 6, faithfully recreates the logic of the old stringency index.
 
-![legacy stringency equation](https://latex.codecogs.com/png.latex?%283%29%5Cqquad%20SI_%7Blegacy%7D%3D%5Cfrac%7B1%7D%7B7%7D%20%5Cleft%20%28I_%7BC1%7D&plus;I_%7BC2%7D&plus;max%28I_%7BC3%7D%2CI_%7BC4%7D%29&plus;I_%7BC5%7D&plus;max%28I_%7BC6%7D%2CI_%7BC7%7D%29&plus;I_%7BC8%7D&plus;I_%7BH1%7D%20%5Cright%20%29)
+![legacy stringency equation](https://latex.codecogs.com/svg.image?(6)SI_%7Blegacy%7D%3D%5Cfrac%7B1%7D%7B7%7D%20%5Cleft%20%28I_%7BC1%7D&plus;I_%7BC2%7D&plus;max%28I_%7BC3%7D%2CI_%7BC4%7D%29&plus;I_%7BC5%7D&plus;max%28I_%7BC6%7D%2CI_%7BC7%7D%29&plus;I_%7BC8%7D&plus;I_%7BH1%7D%20%5Cright%20%29)
 
-The individual sub-index scores for the legacy index are calculated through a slightly different formula to the one described in equation 2 above. This formula is described in equation 4 below (with a seperate formula for C8, the only indicator in this index without a flagged variable).
+The individual sub-index scores for the legacy index are calculated through a slightly different formula to the one described in equation 2 above. This formula is described in equation 7 below (with a seperate formula for C8, the only indicator in this index without a flagged variable).
 
-![legacy stringency sub-index equation](https://latex.codecogs.com/png.latex?%284%29%5Cqquad%20I_%7Bj%2Ct%7D%3D100%5Cleft%20%28%5Cfrac%7Bv_%7Bj%2Ct%7D&plus;f_%7Bj%2Ct%7D%7D%7BN_%7Bj%7D&plus;1%7D%5Cright%29%5Cquad%5Cmid%5Cquad%20I_%7BC8%2Ct%7D%3D100%5Cleft%28%5Cfrac%7Bv_%7B%20_%7BC8%2Ct%7D%7D%7D%7BN_%7BC8%7D%7D%20%5Cright%29)
+![legacy stringency sub-index equation](https://latex.codecogs.com/svg.image?(7)I_%7Bj%2Ct%7D%3D100%5Cleft%20%28%5Cfrac%7Bv_%7Bj%2Ct%7D&plus;f_%7Bj%2Ct%7D%7D%7BN_%7Bj%7D&plus;1%7D%5Cright%29%5Cquad%5Cmid%5Cquad%20I_%7BC8%2Ct%7D%3D100%5Cleft%28%5Cfrac%7Bv_%7B%20_%7BC8%2Ct%7D%7D%7D%7BN_%7BC8%7D%7D%20%5Cright%29)
+
+Please note that this is NOT present in the differentiated vaccination coding csv. The legacy folder contains the two previous versions of the OxCGRT data structure.
 
 ## Index methodology changelog
 
+- 27 July 2022: differentiated data structure incorporated
 - 27 September 2021: note to state no longer updating E3, E4 and H4
 - 5 May 2021: replaced '19 indicators' with '20 indicators'
 - 15 March 2021: added H8 Protection of elderly people 
