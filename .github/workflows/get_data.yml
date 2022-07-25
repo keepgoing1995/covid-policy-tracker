@@ -1,6 +1,8 @@
 name: Data link to OxCGRT
 on:
-  push
+  push:
+    branches:
+      - differentiated
 # schedule:
 #   - cron: '1 2-23 * * *'
 
@@ -72,4 +74,4 @@ jobs:
          git config --local user.name "GitHub Action"
          git add .
          git diff-index --quiet HEAD || git commit -m "OxCGRT Data Update" -a
-         git push origin differentiated:differentiated
+         git push origin
