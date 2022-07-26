@@ -1,4 +1,3 @@
-
 ![Data link to OxCGRT](https://github.com/OxCGRT/covid-policy-tracker/workflows/Data%20link%20to%20OxCGRT/badge.svg) <-- status of connection to OxCGRT database
 
 Our data is published as CSV files here in the data folder of our OxCGRT/covid-policy-tracker repository. This is our recommended option to access our data.
@@ -23,7 +22,7 @@ Prior to July 2022 we published data in a different structure wihtout this diffe
 | `latest_responses` | All national  jurisdictions in one file. Separate folders by country for subnational data | A single variable for each indicator: <ul> <li>  For C1-C7, H6 and H8, this is the ‘majority’ (M) version </li><li>  For C8 this is C8EV </li><li> For V1-V4 these are the summary indicators </li><li> A single `average` version of each index </ul>  | | Duration of policy codes for a country along with initial notes. Sorted by PolicyType - PolicyCode - Start Date - End Date - Initial Note | 
 -->
 
-#### Coverage of specific indicators
+### Coverage of specific indicators
 
 We collect data across five different types of policy indicators (C, E, H, M, V). The data that relate to vaccine policy (eg. avaialbility of vaccines to different populations) is spread across over 100 raw variables (as [described in our codebook](/documentation/codebook.md#vaccination-policies)), and so some of our files contain 10 simple summary indicators of this information.
 
@@ -42,7 +41,7 @@ We collect data across five different types of policy indicators (C, E, H, M, V)
 - We also include a numerical combination, using the same methodology to calculate compenents for our indices: a targeted policy is considered a half-step lower than a general jurisdiction-wide policy. For instance, for C3_Cancel public events we would have 0, 0.5 (recommend cancelling in some areas), 1(recommend cancelling everywhere), 1.5 (require cancelling in some areas), 2 (require cancelling everywhere).
 -->
 
-#### Data relating to differentiated policies
+### Data relating to differentiated policies
 
 For some of our containment and health indicators (C and H), we differentiate the policies depending on whether they apply to everyone (`E`), non-vaccinated people (`NV`), or vaccinated people (`V`). This information, combined with the vaccination rate, allows us to determine what policy applies to the majority (`M`) of people. We publish different combinations of this information in different files. (Our [codebook](/documentation/codebook.md#differentiation-of-policies-by-vaccine-status) has more information about these differentiated policies.)
 
