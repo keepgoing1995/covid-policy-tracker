@@ -55,6 +55,8 @@ We also produce different iterations of each index giving different weightings t
 
 In addition to country-level data, our primary dataset additionally includes some subnational data. So far we have incorporated data for US states, Brazilian states, UK devolved nations, Canadian provinces and territories, Chinese provinces, Australian states and territories, and Indian states into the primary dataset on this covid-policy-tracker repository. These subnational entities are included in their own designated folders in the [data](data) folder.
 
+We are still in the process of collecting differentiated data for Brazil and India, and so these files are published using our old legacy data format. (More information on our legacy data can be found in our [OxCGRT/covid-policy-tracker-legacy](https://github.com/OxCGRT/covid-policy-tracker-legacy) repo.)
+
 Subnational data can be interpreted using the main [codebook](documentation/codebook.md), with additional guidance on subnational-specific interpretation available in the [documentation folder](documentation/subnational_interpretation.md). The subnational data included in our primary dataset aims to describe the overall policy environment that applies to residents of the state or equivalent jurisdiction, and so includes policies set by the national government where those values are more stringent than state-level action. 
 
 
@@ -121,6 +123,13 @@ For details on how these issues around patchy or missing data affect our index c
 - **Some indicators (and therefore, index values) will be changed retroactively.** We aim to have a second pair of eyes review every data point in the OxCGRT. Inevitably, some things may be tweaked in this review process, leading to changes to past dates. We recommend you frequently download fresh data from OxCGRT, rather than relying on an old export.
 - **Null values are not the same as 0**. The gaps described above – where countries are not up to date, or where some indicators are missing – will be represented as null values. These should not be interpreted as a 0, although for the purposes of calculating our indices, we conservatively treat them as such.
 - **Fiscal and monetary indicators are not evenly covered**. We do not have comprehensive and high quality coverage of our indicators E3, E4, H4, and H5. You should check the data carefully before relying on these indicators, and do not assume they are perfectly comprehensive.
+
+## Legacy data structures
+
+Over the years, as we contiunue to build our database and add features we have had to retire two now-outdated data structures. This occured in April 2020 when we moved from 13 "S" indicators to our current range of C/E/H indicators (the later addition of several H indicators, and the new V indicators, were added on to the existing C/E/H data structure). In July 2022, we retired that post-April 2020 data structure with the advent of our "differentiated" coding, which introduced up to four versions of 10 of the indicators, depending on how the policies applied to people based on vaccination status.
+
+If you are interested in our legacy data structures, they are published in a separate [OxCGRT/covid-policy-tracker-legacy](https://github.com/OxCGRT/covid-policy-tracker-legacy) repository.
+
 
 ## Sample analysis
 
