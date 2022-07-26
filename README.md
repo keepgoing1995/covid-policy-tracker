@@ -86,7 +86,7 @@ We collect data across five different types of policy indicators (C, E, H, M, V)
 | `latest` | yes | yes | yes | yes | yes | | |
 | `differentiated_withnotes` | yes | yes | yes | yes | yes | | yes |
 | `timeseries` | yes | yes | yes | yes | | |
-| `vaccines_full` | | | | | yes | yes |
+| `vaccines_full` | | | | | yes | yes | yes |
 
 <!--
 | `latest_all_changes` | yes | yes | yes | yes | | | |
