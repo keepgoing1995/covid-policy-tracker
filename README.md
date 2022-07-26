@@ -75,26 +75,36 @@ The OxCGRT is updated continuously in real time. There are numerous ways you can
 ### Getting data from this GitHub repository
 ![Data link to OxCGRT](https://github.com/OxCGRT/covid-policy-tracker/workflows/Data%20link%20to%20OxCGRT/badge.svg) <-- status of connection to OxCGRT database
 
-### Data Folder README
-
-
-On 25 July 2022 the OxCGRT main Github repo was changed. It now includes data changes which incorporate different policies applying to vaccinated and non-vaccinated people, which resulted in new csv files. We will also keep our previous csvs updated in the new legacy repo.
-
+Our data is published as CSV files in the [/data](/data) folder of this repository, **and this is our recommended option to access our data**. The data is provided in several formats – including a simple [timeseries](/data/timeseries) format – and subnational data is contained in specific folders.
 
 Below is a summary of what is contained in each csv file, what each abbreviation represents, and a list of the contents of each folder. The [codebook](/documentation/codebook.md) and [index methodology](documentation/index_methodology.md) documentation contains more information about what each indicator and index represents.
 
-| File designation | E | NV | V | M* |
-| --- | --- | --- | --- | --- |
-| [`latest`](/data) | x | x | x | yes |
-| [`latest_all_changes`](/data) | x | x | x | yes |
-| [`latest_combined*`](/data) | x | x | x | yes |
-| [`differentiated withnotes`](/data) | yes | yes | yes | yes |
-| [`timeseries`](/data) | x | x | x | yes |
+We collect data across five different types of policy indicators (C, E, H, M, V). The data that relate to vaccine policy (eg. avaialbility of vaccines to different populations) is spread across over 100 raw variables (as [described in our codebook](/documentation/codebook.md#vaccination-policies)), and so some of our files contain 10 simple summary indicators of this information.
 
+| File designation | C | E | H | M | Vaccine summary | Vaccine raw | notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `latest` | yes | yes | yes | yes | yes | | |
+| `differentiated_withnotes` | yes | yes | yes | yes | yes | | yes |
+| `timeseries` | yes | yes | yes | yes | | |
+| `vaccines_full` | | | | | yes | yes |
 
+<!--
+| `latest_all_changes` | yes | yes | yes | yes | | | |
+| `latest_combined*` | yes | yes | yes | yes | | | |
 *Note: In the `latest_combined` files, please note that as described in the codebook, many of our indicators are recorded across two variables: one that records the strictness of the policy, and one that records its scope. 
 - This is reported as a combination of the policy level (a number) and the scope flag (a letter: T for targeted policies or G for general policie; or F/A flags for indicator E1). For instance, for C3_Cancel public events we would have 0, 1T (recommend cancelling in some areas), 1G (recommend cancelling everywhere), 2T (require cancelling in some areas), 2G (require cancelling everywhere).
 - We also include a numerical combination, using the same methodology to calculate compenents for our indices: a targeted policy is considered a half-step lower than a general jurisdiction-wide policy. For instance, for C3_Cancel public events we would have 0, 0.5 (recommend cancelling in some areas), 1(recommend cancelling everywhere), 1.5 (require cancelling in some areas), 2 (require cancelling everywhere).
+-->
+
+For some of our contained and health indicators (C and H), we differentiate the policies depending on whether they apply to everyone (`E`), non-vaccinated people (`NV`), or vaccinated people (`V`). This information, combined with the vaccination rate, allows us to determine what policy applies to the majority (`M`) of people. We publish different combinations of this information in different files. (Our [codebook](/documentation/codebook.md#differentiation-of-policies-by-vaccine-status) has more information about these differentiated policies.)
+
+| File designation | E | NV | V | M* |
+| --- | --- | --- | --- | --- |
+| `latest` | | | | yes |
+| `differentiated_withnotes` | yes | yes | yes | yes |
+| `timeseries` | | | | yes |
+
+Prior to July 2022 we published data in a different structure wihtout this differentiated information. We continue to publish data under that old structure in our [legacy repo](https://github.com/OxCGRT/covid-policy-tracker-legacy).
 
 ### Getting data through our API
 You can also get some OxCGRT national-level data through an API, although this is out-of-date and does not reflect our new (post July 2022) data structure with policies that differentiate between vaccinated and non-vaccinated people. We do not recommend new users use this API. Documentation for this is [published here](https://covidtracker.bsg.ox.ac.uk/about-api).
