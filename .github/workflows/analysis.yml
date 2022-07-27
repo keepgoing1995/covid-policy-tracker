@@ -28,7 +28,7 @@ jobs:
           ls
           cd master
           ls
-          source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/sysrequirements.sh)
+          source <(curl -s https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/master/r-code/sysrequirements.sh)
 
       - name: Run automated script for timeseries
         run: |
