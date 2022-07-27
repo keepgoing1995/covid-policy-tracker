@@ -13,6 +13,18 @@ jobs:
           fetch-depth: 1
       - name: Download raw csv from OxCGRT database
         run: |
+          rm -r 'data/timeseries'
+          mkdir -p 'data/timeseries'
+          
+          rm 'data/OxCGRT_latest.csv'
+          rm 'data/OxCGRT_latest_allchanges.csv'
+          rm 'data/OxCGRT_latest_combined.csv'
+          rm 'data/OxCGRT_latest_responses.csv'
+          rm 'data/OxCGRT_latest_withnotes.csv'
+          rm 'data/OxCGRT_withnotes_2020.csv'
+          rm 'data/OxCGRT_withnotes_2021.csv'
+          rm 'data/OxCGRT_withnotes_2022.csv'
+          
           curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=compressed_new' -s -f -o 'data/OxCGRT_nat_latest.csv'
           curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=vaccine_full' -s -f -o 'data/OxCGRT_vaccines_full.csv'
           curl 'https://oxcgrtportal.azurewebsites.net/api/csvdownload?type=differentiated_notes' -s -f -o 'data/OxCGRT_nat_differentiated_withnotes.csv'
