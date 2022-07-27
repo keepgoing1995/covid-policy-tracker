@@ -6,7 +6,7 @@ The data is provided in several formats – including a simple [timeseries](/tim
 
 Note about subnational files:
 - The `vaccines_full` file in the main folder _also_ contains subnational jurisdictions for the raw V1-V4 vaccine policy indicators (this is not also published in subnational folders). The [codebook](/documentation/codebook.md) and [index methodology](documentation/index_methodology.md) documentation contains more information about what each indicator and index represents.
-- We are still in the process of collecting differentiated data for Brazil and India, and so these files are published using our old legacy data format. (More information on our legacy data can be found in our [OxCGRT/covid-policy-tracker-legacy](https://github.com/OxCGRT/covid-policy-tracker-legacy) repo.)
+- We are still in the process of collecting differentiated data for Brazil, China, and India, and so these files are published using our old legacy data format. (More information on our legacy data can be found in our [OxCGRT/covid-policy-tracker-legacy](https://github.com/OxCGRT/covid-policy-tracker-legacy) repo.)
 
 The following table describes each type of file in turn. Below that, we have simpler tables that break down the files along specific dimensions (eg. which files contain which indicators, which files contain differentiated policies).   
 
