@@ -1,7 +1,8 @@
-name: An R workflow to automate daily updates of main repo graphs and timeseries csv
+name: An R workflow to automate daily updates of main repo timeseries csv
 on:
-  schedule:
-    - cron: '45 7 * * *'
+  push
+#  schedule:
+#    - cron: '45 7 * * *'
 
 jobs:
   build:
@@ -29,12 +30,12 @@ jobs:
           ls
           source <(curl -s https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/sysrequirements.sh)
 
-      - name: Run automated script for graphs and timeseries
+      - name: Run automated script for timeseries
         run: |
           ls
           cd master
           ls
-          Rscript -e 'source("https://raw.githubusercontent.com/saptahash/test_repo/master/mainrepo/githubroutine.r")'
+          Rscript -e 'source("https://raw.githubusercontent.com/OxCGRT/covid-policy-scratchpad/master/r-code/create_main_timeseries.R")'
 
       - name: Commit changes
         run: |
